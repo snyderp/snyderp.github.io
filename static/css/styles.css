@@ -57,7 +57,8 @@
   content: "]";
 }
 
-.publications li {
+.publications li,
+.item-pairs li {
   margin-bottom: 1em;
 }
 
@@ -67,4 +68,12 @@
 
 .pub-type:after {
   content: ". ";
+}
+
+.item-pairs .item-pair-label {
+  display: block;
+}
+
+.item-pairs .item-pair-label:after {
+  content: ".";
 }
