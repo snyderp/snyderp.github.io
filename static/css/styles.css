@@ -13,6 +13,12 @@
     display: block;
     clear: both;
   }
+
+  ul, ol {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
 }
 
 .pub-title:after {
