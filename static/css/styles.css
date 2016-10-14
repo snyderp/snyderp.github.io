@@ -8,6 +8,13 @@
   vertical-align: bottom;
 }
 
+@media (max-width: 768px) {
+  .page-header small {
+    display: block;
+    clear: both;
+  }
+}
+
 .pub-title:after {
   content: ". ";
 }
