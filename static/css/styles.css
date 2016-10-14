@@ -19,6 +19,10 @@
     padding-left: 0;
     list-style: none;
   }
+
+  li {
+    margin-bottom: 1em;
+  }
 }
 
 .pub-title:after {
