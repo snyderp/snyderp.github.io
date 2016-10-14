@@ -1,0 +1,70 @@
+.page-header img {
+    width: 150px;
+    display: inline;
+}
+
+.page-header h1 {
+  display: inline;
+  vertical-align: bottom;
+}
+
+.pub-title:after {
+  content: ". ";
+}
+
+.pub-title {
+  display: block;
+}
+
+.authors, .pub-links {
+  padding: 0;
+  margin: 0;
+}
+
+.authors {
+  display: inline;
+}
+
+.pub-links a {
+  white-space: pre;
+}
+
+.authors li, .pub-links li {
+  display: inline;
+}
+
+.authors li:after, .pub-links li:after {
+  content: ", ";
+}
+
+.pub-links li:last-child:after {
+  content: "";
+}
+
+.authors li:nth-last-child(2):after {
+  content: " and ";
+}
+
+.authors li:last-child:after {
+  content: ". ";
+}
+
+.pub-links:before {
+  content: "[";
+}
+
+.pub-links:after {
+  content: "]";
+}
+
+.publications li {
+  margin-bottom: 1em;
+}
+
+.pub-type {
+  text-transform: capitalize;
+}
+
+.pub-type:after {
+  content: ". ";
+}
