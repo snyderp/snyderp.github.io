@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Command Line Tips</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Using the Command Line</h1>
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">    
+                            <a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Starting</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#test-1" aria-controls="test-1" role="tab" data-toggle="tab">Test 1</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#test-2" aria-controls="test-2" role="tab" data-toggle="tab">Test 2</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#test-3" aria-controls="test-3" role="tab" data-toggle="tab">Test 3</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#test-4" aria-controls="test-4" role="tab" data-toggle="tab">Test 4</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#test-5" aria-controls="test-5" role="tab" data-toggle="tab">Security</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="basics">
+                            <h2>Command Line Basics</h2>
+                            <dl>
+                                <dt><code>*</code></dt>
+                                <dd>Everything in the current directory</dd>
+
+                                <dt><code>a*</code></dt>
+                                <dd>Everything in the current directory <strong>that starts with "a"</strong></dd>
+
+                                <dt><code>.</code></dt>
+                                <dd>Where i am now</dd>
+
+                                <dt><code>..</code></dt>
+                                <dd>Directory above me</dd>
+                            </dl>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="test-1">
+                            <h2>Browsing Files</h2>
+
+                            <dl>
+                                <dt><code>cd</code></dt>
+                                <dd>Change directory</dd>
+
+                                <dt><code>cd ..</code></dt>
+                                <dd>Change to the directory above me</dd>
+
+                                <dt><code><em>ex:</em> cd <strong>example</strong></code></dt>
+                                <dd>Change to the directory called <strong>example</strong></dd>
+                            </dl>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="test-2">
+                            <h2>Reading Files</h2>
+
+                            <dl>
+                                <dt><code>cat</code></dt>
+                                <dd>Show the contents of a file</dd>
+
+                                <dt><code><em>ex:</em> cat <strong>example.txt</strong></code></dt>
+                                <dd>Show the contents of example.txt</dd>
+                            </dl>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="test-3">
+                            <h2>Searching for files</h2>
+
+                            <dl>
+                                <dt><code>find</code></dt>
+                                <dd>Search for a file by name</dd>
+
+                                <dt><code>find <strong>a-directory</strong> -name "<strong>important.txt</strong>"</code></dt>
+                                <dd>Look for a file called "<strong>important.txt</strong>" in the directory <strong>a-directory</strong></dd>
+
+                                <dt><code>find <strong>.</strong> -name "other.txt"</code></dt>
+                                <dd>Look for a file called "<strong>other.txt</strong>" in the current directory</dd>
+                            </dl>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="test-4">
+                            <h2>Searching in files</h2>
+
+                            <dl>
+                                <dt><code>grep <strong>query</strong> <strong>*</strong></code></dt>
+                                <dd>Search for the word "<strong>query</strong>" in all the files in the current directory.</dd>
+
+                                <dt><code>grep <strong>password</strong> <strong>secrets/*</strong></code></dt>
+                                <dd>Search for the word "<strong>password</strong>" in all the files in the <strong>secrets</strong> directory</dt>
+
+                                <dt><code>grep -i <strong>ponies</strong> animals.txt</code></dt>
+                                <dd>Search to see if the word "<strong>ponies</strong>"" or "<strong>Ponies</strong>" or "<strong>PoNiEs</strong>" etc is in the file <strong>animals.txt</strong>.</dd>
+                            </dl>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="test-5">
+                            <h2>Security</h2>
+
+                            <dl>
+                                <dt><code>passwd</code></dt>
+                                <dd>Change the password for your user account</dd>
+
+                                <dt><code>ssh-keygen -t ed25519</code></dt>
+                                <dd>Generate an authentication key.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
