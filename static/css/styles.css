@@ -66,12 +66,14 @@
   content: ". ";
 }
 
+.teaching-period:before,
 .pub-links:before {
-  content: "[";
+  content: "[ ";
 }
 
+.teaching-period:after,
 .pub-links:after {
-  content: "]";
+  content: " ]";
 }
 
 .publications li,
@@ -93,4 +95,8 @@
 
 .item-pairs .item-pair-label:after {
   content: ".";
+}
+
+.teaching-period {
+  display: block;
 }
