@@ -1,3 +1,37 @@
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-default {
+  background-color: #141B4B;
+  border-bottom: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: white;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: #F4524D;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+a {
+  color: #F4524D;
+}
+
 .page-header img {
     width: 150px;
     display: inline;
@@ -99,4 +133,14 @@
 
 .teaching-period {
   display: block;
+}
+
+h2 > a {
+  color: black;
+  cursor: default;
+}
+
+h2 > a:hover {
+  text-decoration: none;
+  color: black;
 }

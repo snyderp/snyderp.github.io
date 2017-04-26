@@ -11,6 +11,48 @@
         <link rel="stylesheet" href="static/css/styles.css">
     </head>
     <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="static/images/uic-cs-dept-logo.png" alt="University of Illinois Computer Science Department" height="20" width="66">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#publications">Publications</a>
+                        </li>
+                        <li>
+                            <a href="#teaching">Teaching</a>
+                        </li>
+                        <li>
+                            <a href="#talks">Talks</a>
+                        </li>
+                        <li>
+                            <a href="#other-writing">Other Writing</a>
+                        </li>
+                        <li>
+                            <a href="#positions">Positions</a>
+                        </li>
+                        <li>
+                            <a href="#code">Code</a>
+                        </li>
+                        <li>
+                            <a href="#non-cs">Non-CS Bits</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -43,7 +85,7 @@
                         </li>
                     </ul>
 
-                    <h2>Research Interests</h2>
+                    <h2><a name="research-interests">Research Interests</a></h2>
                     <p>
                         My research focuses on the security and privacy of systems,
                         and how the security guarantees of those systems can
@@ -68,7 +110,7 @@
                         term cloud storage.
                     </p>
 
-                    <h2>Publications</h2>
+                    <h2><a name="publications">Publications</a></h2>
                     <ul class="publications">
                         <li>
                             <a class="pub-title" href="static/papers/CDF_Predictably_Secure_Web_Documents.pdf">CDF: Predictably Secure Web Documents</a>
@@ -198,7 +240,7 @@
                         </li>
                     </ul>
 
-                    <h2>Teaching</h2>
+                    <h2><a name="teaching">Teaching</a></h2>
                     <ul class="teaching">
                         <li>
                           <span class="course-name">Instructor for Software Design – UIC CS342</span>
@@ -215,7 +257,7 @@
                         </li>
                     </ul>
 
-                    <h2>Talks, Posters and Presentations</h2>
+                    <h2><a name="talks">Talks, Posters and Presentations</a></h2>
                     <ul class="publications">
                         <li>
                             <span class="pub-title">Browser Feature Usage on the Modern Web</span>
@@ -327,7 +369,7 @@
                         </li>
                     </ul>
 
-                    <h2>Other Significant Writing</h2>
+                    <h2><a name="other-writing">Other Significant Writing</a></h2>
                     <ul class="publications">
                         <li>
                             <a class="pub-title" href="static/papers/Peter_Snyder_-_Garbled_Circuits_WCP_2_column.pdf">Yao's Garbled Circuits: Recent Directions and Implementations</a>
@@ -344,7 +386,7 @@
                         </li>
                     </ul>
 
-                    <h2>Other Positions and Accomplishments</h2>
+                    <h2><a name="positions">Other Positions and Accomplishments</a></h2>
                     <ul>
                           <li>I am a fellow in UIC's <a href="http://securityigert.uic.edu/">Electronic Security and Privacy IGERT</a>.</li>
                           <li>I organize a <a href="https://listserv.uic.edu/cgi-bin/wa?A0=CRYPTO-PAPERS">crypto reading group</a> at UIC.</li>
@@ -353,7 +395,7 @@
                           <li>I advise <a href="https://timby.org/">TIMBY</a>, a community investigating website and project, on web and application security issues.</li>
                     </ul>
 
-                    <h2>Signifigant Programs and Code</h2>
+                    <h2><a name="code">Signifigant Programs and Code</a></h2>
                     <ul class="item-pairs">
                         <li>
                             <span class="item-pair-label"><a href="https://cloudsweeper.cs.uic.edu/">Cloudsweeper</a></span>
@@ -378,7 +420,7 @@
                         </li>
                     </ul>
 
-                    <h2>Non-CS Bits</h2>
+                    <h2><a name="non-cs">Non-CS Bits</a></h2>
                     <ul>
                           <li>I sing and play guitar in a Chicago power-pop band called <a href="https://thepleasurecenters.bandcamp.com/releases">The Pleasure Centers</a>.</li>
                           <li>I volunteer tutoring Chicago high school students as part of the <a href="https://eastvillageyouthprogram.wordpress.com/">East Village Youth Program</a>.</li>
@@ -389,5 +431,7 @@
                 </div>
             </div>
         </div>
+        <script src="/static/js/jquery-3.2.1.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
     </body>
 </html>
