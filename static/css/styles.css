@@ -32,6 +32,10 @@ a {
   color: #F4524D;
 }
 
+a:hover {
+  color: #141B4B;
+}
+
 .page-header img {
     width: 150px;
     display: inline;
