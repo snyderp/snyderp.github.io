@@ -1,0 +1,17 @@
+h2 {
+    margin-top: 2.8em;
+}
+
+dt {
+    font-weight: bold;
+    float: left;
+    margin-right: .5em;
+}
+
+dt:after {
+    content: ": ";
+}
+
+dd {
+    clear: right;
+}
