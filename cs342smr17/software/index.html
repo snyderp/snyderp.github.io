@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Software - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Course materials for the Summer 2017 session of CS342: Software Design">
+  <link rel="icon" href="/~psnyder/cs342smr17/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342smr17/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342smr17/assets/cs342-summer2017.css">
+  <link rel="canonical" href="http://localhost:4000/~psnyder/cs342smr17/software/">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342smr17/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/git/">Git</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Software</h1>
+  </header>
+
+  <div class="post-content">
+    <p>We’ll be using a variety of tools in this course to learn and practice
+software design skills.  This is an overview of the main ones we’ll
+be using, both required and suggested.</p>
+
+<h2 id="required-tools">Required Tools</h2>
+
+<h3 id="java">Java</h3>
+<p>All of the programming assignments, lectures and tools we’ll be discussing
+will be in Java.  While the principals and patterns will be (mostly) general
+and applicable to any language, we’ll be doing things in Java.  You
+will need to have a Java 8 runtime installed and working on your machine
+to work on the assignments.</p>
+
+<p>You can test the version of Java you have installed by running <code class="highlighter-rouge">java -version</code>
+from the command line.  Any output that doesn’t look something like
+<code class="highlighter-rouge">java version "1.8.XXX"</code> means you probably have the wrong version installed.</p>
+
+<h3 id="unix-y-operating-system">Unix-y Operating System</h3>
+<p>Examples will be given in a unix-y environment (linux and OSX), and assignments
+will be tested on linux. With a properly configured environment Windows will
+work fine too, but you will be responsible for making sure your project
+builds and runs correctly on linux.  If your primary machine is not a linux
+machine, please see below for suggestions.</p>
+
+<h3 id="gnumake">GnuMake</h3>
+<p>Most of the programming assignments will be run and tested using a simple
+provided make script.  This is for several reasons, including: to allow students
+to use any IDEs / development platform they like when writing code, to make it
+easier to test students’ submissions, and to better demonstrate what complex
+IDEs are doing under the hood.</p>
+
+<p>Students will need to make sure that their homework and project submissions work
+correctly using the provided make file.</p>
+
+<h3 id="git">Git</h3>
+<p>All homework will be provided using git, and all completed homework assignments
+must be submitted through git.  A basic run through of git functionality will
+be provided on the first day of class, but students needing a further tutorial /
+refresher / catch up may want to consult the
+<a href="https://git-scm.com/documentation">official git documentation</a>.</p>
+
+<h3 id="ssh">SSH</h3>
+<p>Access to your git respository will be controlled by using SSH keys.  You’ll
+need to generate, secure, and maintain a SSH key private key to fetch and
+submit homework assignments.  You’ll also need to send me the corresponding
+public SSH key.</p>
+
+<p>If you are not familiar with generating and using SSH keys, you might find
+resources like the first three step’s of
+<a href="https://help.github.com/articles/connecting-to-github-with-ssh/">GitHub’s guide to SSH keys</a> useful.</p>
+
+<h2 id="suggested-tools">Suggested Tools</h2>
+
+<h3 id="checkstyle">CheckStyle</h3>
+<p><a href="http://checkstyle.sourceforge.net/">CheckStyle</a> is a opensource Java
+development tool that checks the formatting of your code to, so that it follows
+patterns and practices.  This helps ensure that your code is equally as readable
+to humans as it is to compilers.  It has configurable rule sets.  A common
+ruleset is the <a href="https://google.github.io/styleguide/javaguide.html">Goole Java Style</a>
+guide, which you can instruct checkstyle to use by downloading the XML
+<a href="https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml">configuration file for the rule set</a>
+and running <code class="highlighter-rouge">checkstyle -c google_checks.xml &lt;path to java files&gt;</code>.</p>
+
+<h3 id="virtualbox">VirtualBox</h3>
+<p>All homework assignments will be graded on a linux machine, using Java 8
+on the command line (unless otherwise stated). If you are on a platform where
+installing Java 8 is difficult, or where running programs from the command
+line can be tricky, you might consider using
+<a href="https://www.virtualbox.org/">VirtualBox</a> to run linux in a virtual machine.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    
+
+  </body>
+
+</html>

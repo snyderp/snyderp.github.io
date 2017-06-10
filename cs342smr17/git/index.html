@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Course materials for the Summer 2017 session of CS342: Software Design">
+  <link rel="icon" href="/~psnyder/cs342smr17/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342smr17/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342smr17/assets/cs342-summer2017.css">
+  <link rel="canonical" href="http://localhost:4000/~psnyder/cs342smr17/git/">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342smr17/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/git/">Git</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342smr17/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Git</h1>
+  </header>
+
+  <div class="post-content">
+    <p>This course will use git repos to distribute homework assignments, and you’ll
+need to use your own repos to submit those assignments.</p>
+
+<p>This page is a very basic overview of how to get your repos set up to get
+and submit assignments.  These instructions assume some familiarity with git.
+If you’re not familiar with terms like <code class="highlighter-rouge">pull</code>, <code class="highlighter-rouge">push</code>, and <code class="highlighter-rouge">remote</code>, you might
+want to brush up on those topics elsewhere before continuing.</p>
+
+<h2 id="0-overview-of-setup">0. Overview of Setup</h2>
+<p>Each student will need to interact with two repos during the course.  The
+<code class="highlighter-rouge">course</code> repo, at <code class="highlighter-rouge">git@git.uicbits.net:cs342/course.git</code>, is maintained by
+me and the TA.</p>
+
+<p>We’ll use it to post skeleton code for each assignment. The
+other repo you’ll interact with is your own, which we’ll call <code class="highlighter-rouge">origin</code>.</p>
+
+<p>Students will pull changes in from the <code class="highlighter-rouge">course</code> repo, into their own repos,
+complete the assignments, and then push the completed assignments into their
+<code class="highlighter-rouge">origin</code> repos.</p>
+
+<h2 id="1-generating-keys">1. Generating Keys</h2>
+<p>Each student will need to generate a SSH key for authenticating with the git
+repos. Instructions for doing so might differ if you’re on Windows, but the
+general pattern is to do something like the following:</p>
+
+<p>(<em>note</em>: if you already
+have a public key, at either <code class="highlighter-rouge">~/.ssh/id_ed25519.pub</code> or <code class="highlighter-rouge">~/.ssh/id_rsa.pub</code>,
+you can just send that public key and ignore the rest of this step.)</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Generate a public/private key pair</span>
+ssh-keygen -t ed25519
+
+<span class="c"># Follow all the instructions prompted.  This should generate a private</span>
+<span class="c"># key at ~/.ssh/id_ed25519 and a public key at ~/.ssh/id_ed25519.pub.</span>
+<span class="c"># You can test if this is the case with:</span>
+file ~/.ssh/id_ed25519.pub
+
+<span class="c"># Then add the newly generated priviate key to your SSH agent, so that</span>
+<span class="c"># git knows to use it when authenticating with the git server.</span>
+ssh-add ~/.ssh/id_ed25519
+</code></pre>
+</div>
+
+<p>You should then send the <em>public</em> key to me over email.  Make sure you’re not
+sharing the private key with anyone or it will defeat the whole purpose of
+using public/private keys.</p>
+
+<h2 id="2-configuring-your-origin-repo">2. Configuring Your “origin” Repo</h2>
+<p>Once we’ve got your public key in place, the next steps are to get your
+<code class="highlighter-rouge">origin</code> repo cloned and set up to get code from the <code class="highlighter-rouge">course</code> repo.  In other
+words, we need to get the place where you’ll write your code ready to go,
+and then get that place set up to bring in the skelleton code from the course
+repo.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># First, we clone your personal repo, which we'll call 'origin'.  By default</span>
+<span class="c"># this will be empty, since you've written no code so far.  Make sure to</span>
+<span class="c"># replace &lt;NETID&gt; in the example below with your own NETID.</span>
+git clone git@git.uicbits.net:cs342/&lt;netid&gt;.git cs342hw
+
+<span class="c"># Assuming everything is set up at this point, you'll have a directory</span>
+<span class="c"># called cs342hw, which will be an empty git repo.  We'll move into it</span>
+<span class="c"># so that we can start getting it configured to pull in changes from the</span>
+<span class="c"># `course` repo.</span>
+<span class="nb">cd </span>cd342h2
+
+<span class="c"># Next, configure the git repo to be able to pull in changes from the `course`</span>
+<span class="c"># repo.</span>
+git remote add course git@git.uicbits.net:cs342/course.git
+</code></pre>
+</div>
+
+<h2 id="3-getting-and-submitting-assignments">3. Getting And Submitting Assignments</h2>
+<p>You’re now ready to start pulling in changes from the course repo, so that
+you can start on your assignments.  For each assignment, you’ll generally
+follow these steps.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># First, fetch any changes from the `course` repo that you don't already</span>
+<span class="c"># have in your local repo.</span>
+git pull course master
+
+<span class="c"># The first time you do this, it'll create some directories I've set up for</span>
+<span class="c"># you.  For example, you'll have a .gitignore file, to help keep your repo</span>
+<span class="c"># closed, and a skelletal hw1 directory.</span>
+<span class="c">#</span>
+<span class="c"># You can then do some work on the assignment.  Once you have some changes</span>
+<span class="c"># you'd like to save / back up / commit in your repo, you can do so by</span>
+<span class="c"># adding them to the next "bundle" of changes you'd like to store, and then</span>
+<span class="c"># "storing" them in the repo (ie commiting them).</span>
+
+<span class="c"># Making some changes...</span>
+vim hw1/src/Main.java
+
+<span class="c"># Telling git about the files you want to bundle together</span>
+git add hw1/src/Main.java
+
+<span class="c"># Saving the changes that have been bundled together, along with a helpful</span>
+<span class="c"># note describing those changes"</span>
+git commit -m <span class="s2">"Updated the main function in Main.java"</span>
+
+<span class="c"># Last, you'll want to occasionally push those changes back into your origin</span>
+<span class="c"># repo (ie the copy of your repo stored on UIC's servers).  This both makes sure</span>
+<span class="c"># that your changes are backed up remotely, and shares your changes with us</span>
+<span class="c"># so they can be graded or discussed.</span>
+git push origin
+</code></pre>
+</div>
+
+<p>You’ll do the above patern for each assignment, <code class="highlighter-rouge">pull</code>ing new assignments
+and outlines from the <code class="highlighter-rouge">course</code> server, and pushing your completed changes
+back into your <code class="highlighter-rouge">origin</code> server.</p>
+
+<h2 id="4-questions-and-debugging">4. Questions and Debugging</h2>
+<p>Git is an extremly powerful, but occasionally baffling, tool, especially when
+you’re just learning it.  Please don’t hesitate to ask any questions or share
+any problems that come up on <a href="">Piazza</a> and we’ll be
+very happy to help debug or get things set straight.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    
+
+  </body>
+
+</html>

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Syllabus
-permalink: /syllabus/
+title: Schedule
+permalink: /schedule/
 ---
 
 June 12

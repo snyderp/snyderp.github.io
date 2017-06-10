@@ -4,8 +4,6 @@ h2 {
 
 dt {
     font-weight: bold;
-    float: left;
-    margin-right: .5em;
 }
 
 dt:after {
@@ -13,5 +11,5 @@ dt:after {
 }
 
 dd {
-    clear: right;
+    margin-bottom: 1em;
 }
