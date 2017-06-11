@@ -1,5 +1,6 @@
 h2 {
     margin-top: 2.8em;
+    border-bottom: 1px dashed #ccc;
 }
 
 dt {
