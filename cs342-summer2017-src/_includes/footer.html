@@ -1,0 +1,15 @@
+<footer>
+    <div class="wrapper">
+        <h3>Links</h3>
+        <nav>
+            <ul>
+                <li><a href="{{ "/" | relative_url }}">Main</a></li>
+                {% for page in site.pages %}
+                    {% if page.permalink %}
+                        <li><a href="{{ page.permalink | relative_url }}">{{ page.title | escape }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</footer>
