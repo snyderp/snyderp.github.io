@@ -21,7 +21,7 @@ piazza_url: "https://piazza.com/uic/summer2017/cs342"
 
 description: > # this means to ignore newlines until "baseurl:"
   Course materials for the Summer 2017 session of CS342: Software Design
-baseurl: "/~psnyder/cs342smr17" # the subpath of your site, e.g. /blog
+baseurl: "/~psnyder/cs342-summer2017" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
@@ -30,4 +30,4 @@ theme: 'minima'
 exclude:
   - Gemfile
   - Gemfile.lock
-destination: "../cs342smr17"
+destination: "../cs342-summer2017"
