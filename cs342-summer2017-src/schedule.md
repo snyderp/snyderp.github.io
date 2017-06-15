@@ -48,7 +48,7 @@ June 16, 2017
     <dt>Topics</dt>
     <dd>
         <ul>
-            <li>Object oriented referesher</li>
+            <li>Object oriented refresher</li>
             <li>Classes vs. instances</li>
             <li>Properties, methods and constructors</li>
             <li>Static and final</li>
