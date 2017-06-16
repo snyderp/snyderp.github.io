@@ -1,0 +1,36 @@
+---
+layout: page
+title: Schedule
+permalink: /schedule/
+---
+
+{% for course in site.data.classes %}
+    <h2>
+        <span class="title">{{ course.title }}</span>
+    </h2>
+    <dl>
+        {% if course.date %}
+            <dt>Date</dt>
+            <dd>{{ course.date | date_to_long_string }}</dd>
+        {% endif %}
+
+        <dt>Topics</dt>
+        <dd>
+            <ul>
+                {% for topic in course.topics %}
+                    <li>{{ topic }}</li>
+                {% endfor %}
+            </ul>
+        </dd>
+
+        {% if course.reading %}
+            <dt>Reading</dt>
+            <dd>{{ course.reading }}</dd>
+        {% endif %}
+
+        {% if course.slides %}
+            <dt>Slides</dt>
+            <dd><a href="{{ course.slides | relative_url }}">PDF</a></dd>
+        {% endif %}
+    </dl>
+{% endfor %}

@@ -50,6 +50,18 @@ layout: default
         software design principles and practices.
     </p>
 
+    <h2>Topics Covered</h2>
+    <p>This list is tentitive and may change depending on how class progresses.</p>
+    <ul>
+        {% for course in site.data.classes %}
+            <li>
+                <span class="title">{{ course.title }}</span>
+                {% if course.date %}
+                    <span class="date">{{ course.date | date: "%-m/%-d" }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 
   {{ content }}
 </div>

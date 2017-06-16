@@ -31,3 +31,15 @@ nav li:after {
 nav li:last-child:after {
     content: "";
 }
+
+.date {
+    font-weight: bold;
+}
+
+.date:before {
+    content: "(";
+}
+
+.date:after {
+    content: ")";
+}
