@@ -32,5 +32,10 @@ permalink: /schedule/
             <dt>Slides</dt>
             <dd><a href="{{ course.slides | relative_url }}">PDF</a></dd>
         {% endif %}
+
+        {% if course.files %}
+            <dt>In Class Code Examples</dt>
+            <dd><a href="{{ course.files | relative_url }}">ZIP</a></dd>
+        {% endif %}
     </dl>
 {% endfor %}
