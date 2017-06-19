@@ -36,6 +36,8 @@
     - Information hiding, private
     - Errors and Exceptions
   reading: Pages 60-64, 110-128
+  slides: /assets/slides/2017-06-19.pdf
+  files: /assets/code/2017-06-19.zip
 
 - title: Abstract Classes and Interfaces
   date:  2017-06-21
