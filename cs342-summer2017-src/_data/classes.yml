@@ -65,7 +65,16 @@
     - import
     - Using third party code
     - jar files
-  reading: Pages 88-95
+  reading: Pages 88-95, 239-257
+
+- title: Lambda and Functional Programming
+  date: 2017-06-28
+  topics:
+    - Java 8 and Lambda
+    - Solution to anonymous classes
+    - Loops, Parallelism, and Concurrency
+  reading: Pages 171-174, 258-266
+
 
 - title: Code Smells and Maintainability
   topics:
@@ -102,12 +111,6 @@
     - Dependency Injection
     - jUnit
     - Continuous integration
-
-- title: Lambda and Functional Programming
-  topics:
-    - Java 8 and Lambda
-    - Solution to anonymous classes
-    - Loops, Parallelism, and Concurrency
 
 - title: Concurrency
   topics:
