@@ -24,7 +24,7 @@
     - Properties, methods and constructors
     - Public, Private
     - Class inheritance
-    - Type heirachies
+    - Type hierarchies
   reading: Pages 72-74, 84-88, 97-110
   slides: /assets/slides/2017-06-16.pdf
   files: /assets/code/2017-06-16.zip
@@ -39,20 +39,33 @@
   slides: /assets/slides/2017-06-19.pdf
   files: /assets/code/2017-06-19.zip
 
-- title: Abstract Classes and Interfaces
+- title: Exceptions and Abstract Classes
   date:  2017-06-21
   topics:
     - Abstract classes
-    - Interfaces
     - Managing the type hierarchy
   reading: Pages 128-142
+  slides: /assets/slides/2017-06-21.pdf
+  files: /assets/code/2017-06-21.zip
 
-- title: Type Generic Programing
+- title: Type Generic Programming
   date:  2017-06-23
   topics:
     - Generics
+    - Interfaces
     - Nested Types
   reading: Pages 142-171 (Skimming the Nested Types part is fine, just have a general idea)
+  slides: /assets/slides/2017-06-23.pdf
+  files: /assets/code/2017-06-23.zip
+
+- title: Packages and Sharing Code
+  date: 2017-06-26
+  topics:
+    - Java packages
+    - import
+    - Using third party code
+    - jar files
+  reading: Pages 88-95
 
 - title: Code Smells and Maintainability
   topics:
