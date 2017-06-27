@@ -77,14 +77,15 @@
     - Loops, Parallelism, and Concurrency
   reading: Pages 171-174, 258-266
 
-
 - title: Code Smells and Maintainability
+  date: 2017-06-30
   topics:
     - Documentation and Javadoc
     - Reusable code
     - Refactoring
     - Code complexity analysis
     - Problematic constructions
+  reading: Pages 223-237
 
 - title: Bugs and "Correct" Programming
   topics:
