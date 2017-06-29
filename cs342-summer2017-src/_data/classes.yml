@@ -76,6 +76,8 @@
     - Solution to anonymous classes
     - Loops, Parallelism, and Concurrency
   reading: Pages 171-174, 258-266
+  slides: /assets/slides/2017-06-28.pdf
+  files: /assets/code/2017-06-28.zip
 
 - title: Code Smells and Maintainability
   date: 2017-06-30
