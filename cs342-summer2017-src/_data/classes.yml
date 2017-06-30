@@ -88,14 +88,9 @@
     - Code complexity analysis
     - Problematic constructions
   reading: Pages 223-237
+  slides: /assets/slides/2017-06-30.pdf
+  files: /assets/code/2017-06-30.zip
 
-- title: Bugs and "Correct" Programming
-  topics:
-    - Static analysis
-    - Linting
-    - Bug Detection
-    - Fuzzing
-    - Unit Testing
 
 - title: Networking
   topics:
