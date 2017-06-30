@@ -79,7 +79,7 @@
   slides: /assets/slides/2017-06-28.pdf
   files: /assets/code/2017-06-28.zip
 
-- title: Code Smells and Maintainability
+- title: Documentation, reusable code, and tooling
   date: 2017-06-30
   topics:
     - Documentation and Javadoc
