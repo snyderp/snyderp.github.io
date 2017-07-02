@@ -43,3 +43,16 @@ nav li:last-child:after {
 .date:after {
     content: ")";
 }
+
+td, th {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+td:first-child, th:first-child {
+    padding-left: 0;
+}
+
+td:last-child, th:last-child {
+    padding-right: 0;
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 3 - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Overview This assignment aims to give you more practice thinking of factoring code into classes, abstract classes, and interfaces. You’ll be implementing cod...">
+  <link rel="icon" href="/~psnyder/cs342-summer2017/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/cs342-summer2017.css">
+  <link rel="canonical" href="http://localhost:4000/~psnyder/cs342-summer2017/homework/hw3.html">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342-summer2017/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/git/">Git</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/homework/">Homework</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Homework 3</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
+<p>This assignment aims to give you more practice thinking of factoring code
+into classes, abstract classes, and interfaces.  You’ll be implementing code
+that represents files on disk, and then using that code to implement a command
+line application called <code class="highlighter-rouge">fileinfo</code>.</p>
+
+<p>This assignment contains three types of code, described below in further detail.</p>
+
+<h3 id="cs342filetypes">cs342/filetypes</h3>
+<p>This is where you’ll write your code for this assignment.  You can edit the
+files in this directory, and create new files as needed.  The classes in this
+directory each represent a different type of file.  You goal is to</p>
+
+<ol>
+  <li>correctly taxonomize the file types here, according to their mime types
+(ex the MimedPngFile class represents the <code class="highlighter-rouge">image/png</code> mime type, and
+so should be put in the type hierarchy in a location like
+<code class="highlighter-rouge">MimedFile &gt; MimedImageFile &gt; MimedPngFile</code>).  You should create any needed
+additional classes needed to correctly and completely taxonomize these types.</li>
+  <li>implement and abstract methods where it makes sense.  Types that are
+only in the system for classification reasons should be <code class="highlighter-rouge">abstract</code>, and
+methods that will only be implemented in child classes should also
+be <code class="highlighter-rouge">abstract</code>.  In short, make sure your functionality is implemented
+where it makes the most sense.</li>
+  <li>implement the interfaces for their correct types.  Java’s interface
+system allows you to categorize functionality that cuts across the
+type taxonomy.  You should implement each interface discussed in the
+next section, for each type it makes sense.</li>
+</ol>
+
+<h3 id="cs342interfaces">cs342/interfaces</h3>
+<p>The java files in this directory contain interface definitions that you’ll
+implement in this project.   You should not make any changes to the files in
+this directory.  You’ll instead implement these interfaces for the filetypes
+they make sense for.</p>
+
+<h3 id="cs342given">cs342/given</h3>
+<p>This is code, written for you, that implements some of the glue logic
+in the <code class="highlighter-rouge">fileinfo</code> command line application.  You should not make any changes
+to these files, though feel free to look through these files, if you’d like,
+to better understand how the command line application works.</p>
+
+<h2 id="requirements">Requirements</h2>
+<p>Receiving full credit for this assignment requires that you correctly</p>
+
+<ol>
+  <li>categorize / taxonomize all of the file types give in the <code class="highlighter-rouge">cs342/filetypes</code>
+directory</li>
+  <li>correctly implement the needed methods on those types</li>
+  <li>mark the classes and methods as <code class="highlighter-rouge">abstract</code> where it makes sense, and only
+include method implementation where its useful and clean.</li>
+  <li>implement all the interfaces on all the types that make sense. If this
+is done correctly, you should implement the interfaces 9 times in the
+8 classes (i.e. one class will implement multiple interfaces).</li>
+  <li>handle errors reasonably.  This does not need to be extensive or
+comprehensive, but when your code encounters an exceptional case where it
+cannot reasonably continue, you should print a message to
+<a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29">STDERR</a>
+(not <strong>STDOUT</strong>!) describing the error you’ve encountered, and end execution.
+These error messages should be informative to the user, and specific to the
+error encountered.  For example “Was not able to read the zip file,
+it’s password protected” is a good error to print out,
+“IOException, quitting” is a bad message to print out.</li>
+</ol>
+
+<p>Your repo includes a PDF parsing library.  The <code class="highlighter-rouge">makefile</code> is configured so
+that you can use this library in your solution.</p>
+
+<p>Your solution can use the included PDF library,
+<a href="https://pdfbox.apache.org/">PDFBox</a>, and any functionality included in
+the Java standard library. You are not allowed to use any other code,
+either in the form of third party libraries, or copy-pasted from classmates
+or websites.</p>
+
+<p>You are allowed to use any of the documentation provided by Oracle or the
+PDFBox library.  You are also encouraged to discuss on Piazza.</p>
+
+<p>Your code should never throw an Exception or dump a stracktrace to the console.
+It should handle all errors correctly and internally.  Doing so will loose
+you lots of points.  Similarly, changing any files or code blocks that you’re
+prohibited from changing (either in this document, or in the included code
+comments) will either disqualify your solution or result in large point
+reductions.</p>
+
+<h2 id="resources-and-suggestions">Resources and Suggestions</h2>
+<p>I have stubbed out the class files in the <code class="highlighter-rouge">cs342/filetypes</code> directory with
+all the classes and import statements you’ll need to complete the assignment,
+along with documentation links for each.  You are welcome to use other code
+(within the restrictions mentioned above) if you’d prefer, but the already
+imported code is sufficient.</p>
+
+<p>You should use the included <code class="highlighter-rouge">fileinfo</code> script to test your code.  You can
+use it by running <code class="highlighter-rouge">./fileinfo &lt;some file&gt;</code> and looking to see if the output
+matches what is expected.  Two test cases are included in the repo for your
+testing, but your code should work successfully on any file with any
+of the file extensions mentioned in <code class="highlighter-rouge">cs342/given/Registery.java</code>.</p>
+
+<p>You may also find the following useful:</p>
+
+<ul>
+  <li><a href="https://svn.apache.org/viewvc/pdfbox/trunk/examples/src/main/java/org/apache/pdfbox/examples/pdmodel/RemoveFirstPage.java?view=markup">PDFBox Example</a></li>
+  <li>You can write to STDERR with <code class="highlighter-rouge">System.error</code></li>
+  <li>The class and package documentation linked to in the class stubs provided in
+<code class="highlighter-rouge">cs342/filetypes</code></li>
+</ul>
+
+<h2 id="grading">Grading</h2>
+<p>There are a maximum of 20 points possible on this assignment.</p>
+
+<ul>
+  <li><strong>2 Points</strong>: Correctly taxonomizing the file types according to their
+mime type.</li>
+  <li><strong>2 Points</strong>:  Correctly handling errors (ie helpful error messages, sent
+               to STDERR, etc.)</li>
+  <li><strong>6 Points</strong>:  Correctly marking classes and methods as abstract</li>
+  <li><strong>10 Points</strong>: Having <code class="highlighter-rouge">fileinfo</code> return the correct output for each of 5
+               test cases (2 points per test case).</li>
+</ul>
+
+<h2 id="due-date">Due Date</h2>
+<p>This assignment is due by 11:59AM on Wednesday, June 28, 2017.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer>
+    <div class="wrapper">
+        <h3>Links</h3>
+        <nav>
+            <ul>
+                <li><a href="/~psnyder/cs342-summer2017/">Main</a></li>
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/git/">Git</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/homework/">Homework</a></li>
+                    
+                
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/schedule/">Schedule</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/software/">Software</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+  </body>
+
+</html>

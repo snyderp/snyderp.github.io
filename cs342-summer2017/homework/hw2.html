@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 2 - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Overview This assignment aims to give you a little more practice taxonomizing types, and implementing those taxonomies using Java’s class system.">
+  <link rel="icon" href="/~psnyder/cs342-summer2017/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/cs342-summer2017.css">
+  <link rel="canonical" href="http://localhost:4000/~psnyder/cs342-summer2017/homework/hw2.html">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342-summer2017/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/git/">Git</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/homework/">Homework</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Homework 2</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
+<p>This assignment aims to give you a little more practice taxonomizing types,
+and implementing those taxonomies using Java’s class system.</p>
+
+<p>You have two tasks in this assignment.</p>
+
+<p><strong>First</strong>, you’ll need to  create a class hierarchy in Java that depicts a
+logical categorization of the following types.</p>
+
+<ul>
+  <li>Animal</li>
+  <li>Beluga</li>
+  <li>Chameleon</li>
+  <li>Dog</li>
+  <li>GermanShepard</li>
+  <li>Mammal</li>
+  <li>Orca</li>
+  <li>Reptile</li>
+  <li>ShibaInu</li>
+  <li>Snake</li>
+  <li>Whale</li>
+</ul>
+
+<p>Each of these types is represented as a class, each with its own file in
+the <code class="highlighter-rouge">hw2/src/cs342/animals</code> directory.  These files and classes currently
+represent a type hierarchy with <code class="highlighter-rouge">Animal</code> at the top, and every other
+class being a child class of <code class="highlighter-rouge">Animal</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Animal
+    |- Beluga
+    |- Chameleon
+    |- Dog
+    |- GermanShepard
+    |- Mammal
+    |- Orca
+    |- Reptile
+    |- ShibaInu
+    |- Snake
+    |- Whale
+</code></pre>
+</div>
+
+<p>You should first decide what a better organization for these types, and then
+implement that organization by updating the <code class="highlighter-rouge">.java</code> files in
+<code class="highlighter-rouge">hw2/src/cs342/animals</code>. You should have the classes inherit / extend
+each other so that they implement your class hierarchy.</p>
+
+<p><strong>Second</strong>, once you’ve taxonomized these types, you’ll need to describe
+them, by overriding the methods in the <code class="highlighter-rouge">Animal</code> class.  You will need to
+override the following methods in your hierarchy:</p>
+
+<ul>
+  <li>public boolean isWarmBlooded()</li>
+  <li>public boolean isLivingUnderWater()</li>
+  <li>public boolean isNamedAfterEuropeanCountry()</li>
+  <li>public boolean canChangeColor()</li>
+  <li>public boolean isBlackAndWhite()</li>
+</ul>
+
+<p>The catch is that you can only implement / override each method <em>once</em> in your
+solution.  In other words, can add a maximum of five new method definitions
+<em>total</em> to the code in <code class="highlighter-rouge">hw2/src/cs342/animals</code>.  The goal is to have
+the class system express the correct answers (for the questions represented
+by these methods) for each type in the system.</p>
+
+<p>The part that will take some thinking through is “which level of the hierarchy
+to do the overriding at”.  Keep in mind that if you override a method
+on a parent class, you’re also overriding it for all the children of that class
+(unless you re-override it on a child class, which is not possible in this
+assignment).</p>
+
+<p>If you’ve done this correctly, then each of these sets of answers should
+give you back exactly one type, describing a logical animal.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Warm Blooded?</th>
+      <th>Under Water?</th>
+      <th>Named after EU Country</th>
+      <th>Changes Color?</th>
+      <th>Black and White?</th>
+      <th>Correct type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>true</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>GermanShepard</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>true</td>
+      <td>false</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>false</td>
+      <td>?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A testing program is included in your repo.  See the below “Resources and
+Suggestions” section for more information.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>You are only allowed to edit code in <code class="highlighter-rouge">hw2/src/cs342/animals</code>, with the
+exception of the <code class="highlighter-rouge">hw2/src/cs342/animals/Animal.java</code> file, which you
+<strong>cannot</strong> change.  You also may not make any changes to the
+<code class="highlighter-rouge">hw2/src/Main.java</code> file, the included <code class="highlighter-rouge">jar</code> file, or any other file in
+the repo.</p>
+
+<p>You can only override / implement a maximum of five methods in your code.
+In other words, if you’ve written <code class="highlighter-rouge">public boolean</code> more than five times, your
+solution is incorrect :)</p>
+
+<h2 id="resources-and-suggestions">Resources and Suggestions</h2>
+<p>There is a test script in your repo, called <code class="highlighter-rouge">run</code>.  It takes five arguments,
+each corresponding to one of the five methods you’re allowed to override.
+You run it as follows:</p>
+
+<p><code class="highlighter-rouge">./run --warmblood {true,false} --underwater {true,false} --euroname {true,false} --changecolor {true,false} --blackandwhite {true,false}</code></p>
+
+<p>proving the values for each flag (warmblood, underwater, etc.) as desired.
+The program will then check your type hierarchy and return a list of
+all the types that match the parameters you provided.  A correct solution will
+return exactly one type for each of the combination of values described
+in the table in the “Overview” section.</p>
+
+<p>For example, to replicate the first row of the table, you’d use
+<code class="highlighter-rouge">./run --warmblood true --underwater false --euroname true --changecolor false --blackandwhite false</code>,
+and your program should output “german shepard”.</p>
+
+<p>You might also find the following links useful, especially if you’re not much
+into animals:</p>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Killer_whale">Orca</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Beluga_whale">Beluga</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Shiba_Inu">Shiba Inu</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Alaskan_husky">Alaskan Husky</a></li>
+</ul>
+
+<h2 id="grading">Grading</h2>
+<p>This assignment will be worth 10 points.  Four points for implementing
+getting the taxonomy / class hierarchy correct, and one point each
+for your program generating the correct results for each of the
+six sets of terms described in the table above.</p>
+
+<p>No late or partial credit will be given.  Working with other students,
+or using resources other than the text book or the above Wikipedia links
+is forbidden and will be considered academic dishonesty.</p>
+
+<h2 id="due-date">Due Date</h2>
+<p>This assignment is due by 11:59AM on Wednesday, June 21, 2017.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer>
+    <div class="wrapper">
+        <h3>Links</h3>
+        <nav>
+            <ul>
+                <li><a href="/~psnyder/cs342-summer2017/">Main</a></li>
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/git/">Git</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/homework/">Homework</a></li>
+                    
+                
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/schedule/">Schedule</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/software/">Software</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+  </body>
+
+</html>

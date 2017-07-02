@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 4 - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Overview In this project you will build a tool for processing, filtering, sorting and formatting external data. The data you’ll be using for this project is ...">
+  <link rel="icon" href="/~psnyder/cs342-summer2017/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/cs342-summer2017.css">
+  <link rel="canonical" href="http://localhost:4000/~psnyder/cs342-summer2017/homework/hw4.html">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342-summer2017/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/git/">Git</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/homework/">Homework</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Homework 4</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
+<p>In this project you will build a tool for processing, filtering, sorting and
+formatting external data. The data you’ll be using for this project is
+slightly reformatted data taken from the Chicago government’s open data web
+site, describing moving violations recorded at “red light” cameras around
+the city.</p>
+
+<p>This homework is also structured to nudge you towards writing good library
+code.  This means proper formatting and documentation, and raising errors
+to calling code (instead of printing out error messages, or exiting yourself).</p>
+
+<p>Your application will need to do the following (some of which are stubbed out
+in the provided code):</p>
+
+<ol>
+  <li>Read the source data from a provided JSON file, and process it into
+<code class="highlighter-rouge">uic.redlightcams.DataPoint</code> instances.</li>
+  <li>(Possibly) filter the data set by user provided parameters.  These filters
+include options like “only include records from camera ###” (i.e.
+<code class="highlighter-rouge">./camerafilter --fcol CAMERA_ID -fval 2123</code>), “only include records
+that were recorded at a given intersection” (i.e. <code class="highlighter-rouge">./camerafilter --fcol
+INTERSECTION --fval "CLARK AND FULLERTON"</code>), or “only include records that
+occured within 3 miles of UIC (i.e. <code class="highlighter-rouge">./camerafilter --dist 3</code>).</li>
+  <li>(Possibly) sort the data set by user provided parameters.  For example,
+“show me records, most recent first” (i.e. <code class="highlighter-rouge">./camerafilter --scol DATE
+--sdir DESC</code>) or “show me the records, sorted by camera ID” (i.e.
+<code class="highlighter-rouge">./camerafilter --scol CAMERA_ID --sdir ASC</code>).</li>
+  <li>(Possibly) aggregate the dataset across dates (see below for more details).</li>
+  <li>Print the resulting data set out, either as a JSON encoded text string,
+or a CSV file, depending on the user provided parameters (i.e.
+<code class="highlighter-rouge">./camerafilter --output JSON</code> or <code class="highlighter-rouge">./camerafilter --output CSV</code>).</li>
+</ol>
+
+<h3 id="input-data-format">Input Data Format</h3>
+<p>The data you’ll be working with, located in your repo at
+<code class="highlighter-rouge">hw4/data/red-light-camera-violations.json</code>, is a JSON encoded string.  This
+data contains a large number of arrays of data, each containing the following
+pieces of data (in this order):</p>
+
+<ol>
+  <li>Intersection of recording</li>
+  <li>ID of the camera doing the recording</li>
+  <li>The address of the camera</li>
+  <li>The date of the recording</li>
+  <li>Number of redlight violations that the camera recorded, on this date</li>
+  <li>The latitude where the camera is located</li>
+  <li>The longitude where the camera is located</li>
+</ol>
+
+<p>Each row / record in this dataset represents the number of red light violations
+recorded on a specific camera, on a given date.</p>
+
+<h3 id="aggregation-requirements">Aggregation Requirements</h3>
+<p>Your code must support an “aggregation” mode, where data records are combined
+across all dates, to provide a summary of what happened for each camera
+across the entire data set. For example, consider the below three data records
+(some columns are excluded for concision, this example only includes
+the “address”, “date” and “num violations” columns).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"800 W 79TH STREET", "2017-03-17T00:00:00", "3"
+"800 W 79TH STREET", "2017-03-18T00:00:00", "5"
+"7432 W TOUHY AVENUE", "2017-03-17T00:00:00", "3"
+</code></pre>
+</div>
+
+<p>When “aggregating” these results across time, the correct output should be:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"800 W 79TH STREET", "8"
+"7432 W TOUHY AVENUE", "3"
+</code></pre>
+</div>
+
+<h3 id="outputting-data">Outputting Data</h3>
+<p>Your code will need to output in both JSON and CSV formats.  Refer to the
+“docblock” for the <code class="highlighter-rouge">Filter#generateReport</code> method for specific instructions
+on in what order to include data in the rows / JSON arrays in your output
+reports.</p>
+
+<h3 id="data-types">Data Types</h3>
+<p>You’ll need to make sure you’re parsing the JSON file correctly into Java
+data types, so that you can sort, filter, etc on them correctly.  For example,
+the JSON data includes the “camera id” column as a string.  You should make
+sure you represent this in your code as an <code class="highlighter-rouge">Integer</code> and not a <code class="highlighter-rouge">String</code>, since
+sorting strings can result in unexpected results (e.x. if you’re not careful,
+“2222” can end up as sorted before “3”, when doing string comparisons).</p>
+
+<h2 id="requirements">Requirements</h2>
+<p>Your code should meet all of the following requirements:</p>
+
+<ul>
+  <li>You cannot write any loops in this code.  No exceptions.  You will need
+to use lambda, collection methods, and / or recursion.  Any <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">do</code>
+or <code class="highlighter-rouge">while</code> statements in your code will be a 50% reduction in the homework’s
+grade.</li>
+  <li>You should only make changes to the <code class="highlighter-rouge">DataPoint.java</code> and <code class="highlighter-rouge">Filter.java</code>
+files.  You can create other classes / files if you’d like, but you should
+not make any changes to any of the other provided files.</li>
+  <li>
+    <p>Your code should correctly handle all errors.  Your code <em>must not</em> ever
+exit, or print anything to STDOUT or STDERR. Doing so is inappropriate
+for library code.  All output or exiting must be handled by the code
+calling into your libraries (i.e. <code class="highlighter-rouge">Main.java</code>).  TL;DR, you must handle
+error cases by throwing exceptions, not printing debug messages or
+exiting.</p>
+
+    <p>Handling errors incorrectly in your code will be treated as getting a
+test case wrong, regardless of whatever else your code does.</p>
+  </li>
+  <li>Your code must be nicely / readably formatted, following Google’s Java
+style (not that Google’s format is <em>best</em>, but that its well documented
+and at least <em>good</em>, certainly way better than no standard).</li>
+  <li>Your code must be correctly documented.  All methods, properties, and
+classes should be documented following “javadoc” conventions.</li>
+</ul>
+
+<h2 id="resources-and-suggestions">Resources and Suggestions</h2>
+<ul>
+  <li><a href="http://json.org/">JSON Specification</a></li>
+  <li><a href="http://www.json.org.cn/resource/javadoc/org/json/package-summary.html">JSON Library Documentation</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV Information</a></li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">Javadoc Information</a></li>
+  <li><a href="https://data.cityofchicago.org/Transportation/Red-Light-Camera-Violations/spqx-js37">Chicago Red Light Camera Data</a></li>
+  <li><a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a></li>
+  <li><a href="https://gis.stackexchange.com/questions/142326/calculating-longitude-length-in-miles">Helpful post on finding distance between coordinates</a></li>
+</ul>
+
+<p>Your repo also includes a helper <code class="highlighter-rouge">./camerafilter</code> too, which you can use
+to more conveniently interact with your program.  Using <code class="highlighter-rouge">./camerafilter --help</code>
+will provide more information about how to use the program and pass filter /
+sorting / output options.</p>
+
+<h2 id="grading">Grading</h2>
+<p>There are a maximum of 25 points possible on this assignment.</p>
+
+<ul>
+  <li><strong>3 Points</strong>:  Correctly formatting your code (ie passing <code class="highlighter-rouge">make check</code> with
+               no errors).</li>
+  <li><strong>2 Points</strong>:  Correctly documenting your code (i.e. all classes, methods
+               properties having correct docblocks).</li>
+  <li><strong>20 Points</strong>: Correctly handling 5 test cases (4 points for each test case,
+               including possibly invalid input).</li>
+</ul>
+
+<h2 id="due-date">Due Date</h2>
+<p>This assignment is due by 11:59AM on Wednesday, July 5, 2017.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer>
+    <div class="wrapper">
+        <h3>Links</h3>
+        <nav>
+            <ul>
+                <li><a href="/~psnyder/cs342-summer2017/">Main</a></li>
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/git/">Git</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/homework/">Homework</a></li>
+                    
+                
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/schedule/">Schedule</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/software/">Software</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+  </body>
+
+</html>

@@ -31,3 +31,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 destination: "../cs342-summer2017"
+collections:
+  homework:
+    output: true
