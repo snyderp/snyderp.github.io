@@ -7,7 +7,7 @@
   reading: NA
   slides: /assets/slides/2017-06-12.pdf
 
-- title: Variables, Control flow
+- title: Variables, control flow
   date:  2017-06-14
   topics:
     - Types and control flow
@@ -16,7 +16,7 @@
   reading: Pages 17–59 (Skimming is fine, feel free to skip the long lists)
   slides: /assets/slides/2017-06-14.pdf
 
-- title: Classes, Objects, and OOP
+- title: Classes, objects, and OOP
   date: 2017-06-16
   topics:
     - Goals of OOP
@@ -29,7 +29,7 @@
   slides: /assets/slides/2017-06-16.pdf
   files: /assets/code/2017-06-16.zip
 
-- title: Inheritance, Class Design, and Error Handling
+- title: Inheritance, class design, and error handling
   date:  2017-06-19
   topics:
     - Static and final
@@ -39,7 +39,7 @@
   slides: /assets/slides/2017-06-19.pdf
   files: /assets/code/2017-06-19.zip
 
-- title: Exceptions and Abstract Classes
+- title: Exceptions and abstract classes
   date:  2017-06-21
   topics:
     - Abstract classes
@@ -48,7 +48,7 @@
   slides: /assets/slides/2017-06-21.pdf
   files: /assets/code/2017-06-21.zip
 
-- title: Type Generic Programming
+- title: Type generic programming
   date:  2017-06-23
   topics:
     - Generics
@@ -58,7 +58,7 @@
   slides: /assets/slides/2017-06-23.pdf
   files: /assets/code/2017-06-23.zip
 
-- title: Packages and Sharing Code
+- title: Packages and sharing code
   date: 2017-06-26
   topics:
     - Java packages
@@ -69,7 +69,7 @@
   slides: /assets/slides/2017-06-26.pdf
   files: /assets/code/2017-06-26.zip
 
-- title: Lambda and Functional Programming
+- title: Lambda and functional programming
   date: 2017-06-28
   topics:
     - Java 8 and Lambda
@@ -90,7 +90,7 @@
   slides: /assets/slides/2017-06-30.pdf
   files: /assets/code/2017-06-30.zip
 
-- title: Further Library and Clean Code Constructions
+- title: More library and clean code constructions
   date: 2017-07-03
   topics:
     - Refactoring
@@ -108,7 +108,7 @@
     - jUnit
     - Continuous integration
 
-- title: Build Systems and Dependencies
+- title: Build systems and dependencies
   date: 2017-07-10
   topics:
     - Deploying and testing
@@ -130,7 +130,7 @@
     - Use and misuse
     - Threads vs. Processes
 
-- title: Async Programming
+- title: Async programming
   date: 2017-07-17
   topics:
     - Taming concurrency
@@ -145,7 +145,7 @@
     - HTTP
     - Simple Servers
 
-- title: Version Control
+- title: Version control
   date: 2017-07-21
   topics:
     - Managing History
@@ -159,7 +159,7 @@
     - Big Four
     - When to use, and why
 
-- title: Application Design
+- title: Application design
   date: 2017-07-26
   topics:
     - MVC
