@@ -161,6 +161,6 @@
 - title: Application design
   date: 2017-07-26
   topics:
-    - MVC
     - Monolithic
     - Microservices
+    - MVC
