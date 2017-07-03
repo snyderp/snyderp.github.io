@@ -99,58 +99,57 @@
     - Static methods
     - Dependency injection
 
-- title: Testing
+- title: Unit testing and reliability
   date: 2017-07-05
   topics:
     - Goals
-    - Unit Testing
     - Dependency Injection
     - jUnit
     - Continuous integration
 
-- title: Build systems and dependencies
-  date: 2017-07-10
-  topics:
-    - Deploying and testing
-    - Build systems
-    - Maven and Gradle
-
-- title: Security
-  date: 2017-07-12
-  topics:
-    - Encryption in Java
-    - Authentication
-    - Costs and benefits compared to Java
-    - LibSodium
-
 - title: Concurrency
-  date: 2017-07-14
+  date: 2017-07-10
   topics:
     - Purposes and dangers
     - Use and misuse
     - Threads vs. Processes
 
 - title: Async programming
-  date: 2017-07-17
+  date: 2017-07-12
   topics:
     - Taming concurrency
     - Compared to Threads
     - Use and misuse
     - Event Loops
 
-- title: Networking
-  date: 2017-07-19
-  topics:
-    - Servers and clients
-    - HTTP
-    - Simple Servers
-
 - title: Version control
-  date: 2017-07-21
+  date: 2017-07-14
   topics:
     - Managing History
     - Collaborative Development
     - GitFlow and Branching
+
+- title: Build systems and dependencies
+  date: 2017-07-17
+  topics:
+    - Deploying and testing
+    - Build systems
+    - Maven and Gradle
+
+- title: Security
+  date: 2017-07-19
+  topics:
+    - Encryption in Java
+    - Authentication
+    - Costs and benefits compared to Java
+    - LibSodium
+
+- title: Networking
+  date: 2017-07-21
+  topics:
+    - Servers and clients
+    - HTTP
+    - Simple Servers
 
 - title: Patterns
   date: 2017-07-24
