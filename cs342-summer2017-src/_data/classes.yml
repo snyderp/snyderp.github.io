@@ -99,6 +99,7 @@
     - Static methods
     - Dependency injection
   slides: /assets/slides/2017-07-03.pdf
+  files: /assets/code/2017-07-03.zip
 
 - title: Unit testing and reliability
   date: 2017-07-05
