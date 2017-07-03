@@ -84,27 +84,23 @@
   topics:
     - Documentation and Javadoc
     - Reusable code
-    - Refactoring
     - Code complexity analysis
     - Problematic constructions
   reading: Pages 223-237
   slides: /assets/slides/2017-06-30.pdf
   files: /assets/code/2017-06-30.zip
 
-
-- title: Networking
+- title: Further Library and Clean Code Constructions
+  date: 2017-07-03
   topics:
-    - Using sockets in Java
-    - HTTP
-    - Simple Servers
-
-- title: Patterns
-  topics:
-    - Purpose
-    - Big Four
-    - When to use, and why
+    - Refactoring
+    - Inheritance vs. Composition
+    - Storing state
+    - Static methods
+    - Dependency injection
 
 - title: Testing
+  date: 2017-07-05
   topics:
     - Goals
     - Unit Testing
@@ -112,46 +108,60 @@
     - jUnit
     - Continuous integration
 
-- title: Concurrency
+- title: Build Systems and Dependencies
+  date: 2017-07-10
   topics:
-    - Purposes and dangers
-    - Use and misuse
-    - Threads vs. Processes
-
-- title: Async Programming
-  topics:
-    - Taming concurrency
-    - Compared to Threads
-    - Use and misuse
-    - Event Loops
-
-- title: Version Control
-  topics:
-    - Managing History
-    - Collaborative Development
-    - GitFlow and Branching
-
-- title: Application Design
-  topics:
-    - Code reuse
-    - Monolithic
-    - Microservices
+    - Deploying and testing
+    - Build systems
+    - Maven and Gradle
 
 - title: Security
+  date: 2017-07-12
   topics:
     - Encryption in Java
     - Authentication
     - Costs and benefits compared to Java
     - LibSodium
 
-- title: Build Systems and Dependencies
+- title: Concurrency
+  date: 2017-07-14
   topics:
-    - Deploying and testing
-    - Build systems
-    - Maven and Gradle
+    - Purposes and dangers
+    - Use and misuse
+    - Threads vs. Processes
 
-- title: Graphical User Interfaces
+- title: Async Programming
+  date: 2017-07-17
   topics:
-    - General Design
-    - Applying "read()", event loops, and threads
-    - Swing (the highs and lows)
+    - Taming concurrency
+    - Compared to Threads
+    - Use and misuse
+    - Event Loops
+
+- title: Networking
+  date: 2017-07-19
+  topics:
+    - Servers and clients
+    - HTTP
+    - Simple Servers
+
+- title: Version Control
+  date: 2017-07-21
+  topics:
+    - Managing History
+    - Collaborative Development
+    - GitFlow and Branching
+
+- title: Patterns
+  date: 2017-07-24
+  topics:
+    - Purpose
+    - Big Four
+    - When to use, and why
+
+- title: Application Design
+  date: 2017-07-26
+  topics:
+    - MVC
+    - Monolithic
+    - Microservices
