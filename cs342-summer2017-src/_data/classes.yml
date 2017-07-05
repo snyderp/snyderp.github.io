@@ -108,6 +108,7 @@
     - Dependency Injection
     - jUnit
     - Continuous integration
+  files: /assets/code/2017-07-05.zip
 
 - title: Concurrency
   date: 2017-07-10
