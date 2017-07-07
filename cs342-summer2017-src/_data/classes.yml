@@ -108,10 +108,12 @@
     - Dependency Injection
     - jUnit
     - Continuous integration
+  slides: /assets/slides/2017-07-05.pdf
   files: /assets/code/2017-07-05.zip
 
 - title: Concurrency
   date: 2017-07-10
+  reading: Pages 208-219
   topics:
     - Purposes and dangers
     - Use and misuse
