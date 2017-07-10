@@ -118,6 +118,8 @@
     - Purposes and dangers
     - Use and misuse
     - Threads vs. Processes
+  slides: /assets/slides/2017-07-10.pdf
+  files: /assets/code/2017-07-10.zip
 
 - title: Concurrency continued
   date: 2017-07-12
