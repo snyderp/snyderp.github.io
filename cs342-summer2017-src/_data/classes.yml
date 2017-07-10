@@ -119,13 +119,13 @@
     - Use and misuse
     - Threads vs. Processes
 
-- title: Async programming
+- title: Concurrency continued
   date: 2017-07-12
   topics:
     - Taming concurrency
-    - Compared to Threads
-    - Use and misuse
-    - Event Loops
+    - Synchronize
+    - Runtime managed concurrency
+  reading: Re-read pages 208-219
 
 - title: Version control
   date: 2017-07-14
