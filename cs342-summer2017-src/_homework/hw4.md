@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Homework 4
-topic: Working with Lambda and Data Formats
+topic: Working with lambda and data formats
 due_date: 2017-07-05
 ---
 

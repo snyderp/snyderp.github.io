@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Homework 2
-topic: Class Hierarchies and Inheritance
+topic: Class hierarchies and inheritance
 due_date: 2017-06-21
 ---
 
