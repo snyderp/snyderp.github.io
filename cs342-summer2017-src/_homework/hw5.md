@@ -2,7 +2,7 @@
 layout: page
 title: Homework 5
 topic: Unit testing and test driven development
-due_date: 2017-17-05
+due_date: 2017-07-17
 ---
 
 
@@ -58,7 +58,7 @@ Requirements
 ---
 Your code should meet all of the following requirements:
 
-* You must create 10 new test cases, each embodying some difficulty in 
+* You must create 10 new test cases, each embodying some difficulty in
   sentence parsing, and each test case documented to explain *what* difficulty
   the test case is meant to demonstrate.
 * Your code should correctly handle all errors.  Your code *must not* ever
