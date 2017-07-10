@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 5 - CS 342: Software Design (Summer 2017)</title>
+  <meta name="description" content="Overview In this assignment, you’ll build on and improve the sentence parsing example from class. You’ll need to write code that’ll parse a text into a serie...">
+  <link rel="icon" href="/~psnyder/cs342-summer2017/assets/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/main.css">
+  <link rel="stylesheet" href="/~psnyder/cs342-summer2017/assets/cs342-summer2017.css">
+  <link rel="canonical" href="/~psnyder/cs342-summer2017/homework/hw5.html">
+</head>
+
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/~psnyder/cs342-summer2017/">CS 342: Software Design (Summer 2017)</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/git/">Git</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/homework/">Homework</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/schedule/">Schedule</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/software/">Software</a>
+            
+          
+            
+            
+            <a class="page-link" href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Homework 5</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
+<p>In this assignment, you’ll build on and improve the sentence parsing example
+from class.  You’ll need to write code that’ll parse a text into a series
+of sentences.  You’ll find that this is surprisingly difficult, for a variety
+of reasons:</p>
+
+<ul>
+  <li>In English, you can “nest” sentences, with quotation marks.  For example,
+the sentence ‘Pete said, “Parsing sentences is difficult.  Good luck!”
+to the class, with a sinister grimace.’ should be treated as one sentence,
+not three.</li>
+  <li>English overloads period, both as a sentence terminator, and for denoting
+abbreviations.  For example, “Pete is flattered to be mistakenly called
+professor, even though he doesn’t have a Ph.D.” is one sentence, not two.</li>
+  <li>Sometimes, sentence terminators are not really used as terminators.  For
+example, ‘Please read this so called “e-text.”’ is one sentence, even
+though it doesn’t end with a period.</li>
+</ul>
+
+<p>You’ll find that there is no easy, obvious, general solution to this problem,
+and you’ll need to rely on a variety of heuristics and rough approaches.  As
+a result, you’ll need to make sure that improving your solution in some new
+manner does not in turn break some other case you previously handled correctly.</p>
+
+<p>This makes the problem a good target for test-driven-development, or
+building the “success conditions” for your code first, and then building code
+that successfully meets those conditions.</p>
+
+<p>In this case, you’ll be using <a href="http://junit.org/junit4/">jUnit</a> to build unit
+tests, each of which should present some new challenge in parsing a text
+into sentences.  Your repo already includes one test case in
+<code class="highlighter-rouge">tests/SentenceParserTest.java</code> in the <code class="highlighter-rouge">SentenceParserTest#toSentencesExample1Test</code>
+method.</p>
+
+<p>You have to tasks in this assignment.  <strong>First</strong>, you should create <em>at least</em>
+10 more test cases, each posing some different challenging test case in
+sentence parsing.  Each test you implement should embody some new
+difficulty in parsing a text into sentences (and the accompanying javadoc
+docblock should explain the difficulty the test is testing for).</p>
+
+<p><strong>Second</strong>, you should implement a solution for parsing a text into sentences
+in the <code class="highlighter-rouge">edu.uic.cs342.SentenceParser#asList</code> method.  You should improve your
+solution by making it pass as many of your tests as possible.  Your solution
+will not be evaluated based on how may of <em>your</em> tests your solution passes
+(it’ll be evaluated based on how many TA-created tests your solution passes).
+But by passing your own well created tests, you maximize your chances of passing
+the TA-created tests.</p>
+
+<h2 id="requirements">Requirements</h2>
+<p>Your code should meet all of the following requirements:</p>
+
+<ul>
+  <li>You must create 10 new test cases, each embodying some difficulty in 
+sentence parsing, and each test case documented to explain <em>what</em> difficulty
+the test case is meant to demonstrate.</li>
+  <li>Your code should correctly handle all errors.  Your code <em>must not</em> ever
+exit, or print anything to STDOUT or STDERR. Doing so is inappropriate
+for library code.  All output or exiting must be handled by the code
+calling into your libraries (i.e. <code class="highlighter-rouge">Main.java</code>).  TL;DR, you must handle
+error cases by throwing exceptions, not printing debug messages or
+exiting.</li>
+  <li>Your code must be nicely / readably formatted, following Google’s Java
+style (not that Google’s format is <em>best</em>, but that its well documented
+and at least <em>good</em>, certainly way better than no standard).</li>
+  <li>Your code must be correctly documented.  All methods, properties, and
+classes must be documented following “javadoc” conventions.</li>
+</ul>
+
+<h2 id="resources-and-suggestions">Resources and Suggestions</h2>
+<ul>
+  <li><a href="http://www.vogella.com/tutorials/JavaRegularExpressions/article.html">Regular Expressions in Java</a></li>
+  <li><a href="https://www.gutenberg.org/">Project Gutenberg</a>, as a place to find a large
+number of texts to possibly use as new test cases.</li>
+  <li><a href="https://github.com/junit-team/junit4/wiki/Getting-started">jUnit 4</a> guide for
+using jUnit for unit testing.</li>
+  <li><a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a></li>
+</ul>
+
+<p>Your repo also includes a helper <code class="highlighter-rouge">./sentparse</code> tool, which you can use
+to more conveniently interact with your program.  Using <code class="highlighter-rouge">./sentparse --help</code>
+will provide more information about how to use the program and pass filter /
+sorting / output options.</p>
+
+<p>You can run a text through your <code class="highlighter-rouge">SentenceParser#asList</code> method in two ways,
+either by providing a path to using the <code class="highlighter-rouge">./sentparse --path &lt;SOME FILE&gt;</code>, or
+by passing the text to your program through <code class="highlighter-rouge">STDIN</code>, such as
+<code class="highlighter-rouge">cat &lt;SOME FILE&gt; | ./sentparse</code>.</p>
+
+<p>You can also use the included <code class="highlighter-rouge">makefile</code> to conveniently perform some common
+tasks with your code.</p>
+<ul>
+  <li><code class="highlighter-rouge">make clean</code> will clear out your previously built <code class="highlighter-rouge">*.class</code> files</li>
+  <li><code class="highlighter-rouge">make build</code> will build your java project</li>
+  <li><code class="highlighter-rouge">make cases</code> will build your project, and then run all the jUnit test cases.</li>
+  <li><code class="highlighter-rouge">make check</code> will check that your code is meeting the required coding
+standards.</li>
+</ul>
+
+<h2 id="grading">Grading</h2>
+<p>There are a maximum of 36 points possible on this assignment.</p>
+
+<ul>
+  <li><strong>3 Points</strong>:  Correctly formatting your code (ie passing <code class="highlighter-rouge">make check</code> with
+               no errors).</li>
+  <li><strong>3 Points</strong>:  Correctly documenting your code (i.e. all classes, methods
+               properties having correct docblocks).</li>
+  <li><strong>20 Points</strong>: Correctly creating 10 unit tests cases, each correctly
+               documented, and each testing a different aspect of sentence
+               parsing.</li>
+  <li><strong>10 Points</strong>: Correctly pass 5 TA-provided test cases, of splitting
+               a text into sentences.</li>
+</ul>
+
+<h2 id="due-date">Due Date</h2>
+<p>This assignment is due by 11:59AM on Monday, July 17, 2017.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main>
+
+    <footer>
+    <div class="wrapper">
+        <h3>Links</h3>
+        <nav>
+            <ul>
+                <li><a href="/~psnyder/cs342-summer2017/">Main</a></li>
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/git/">Git</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/homework/">Homework</a></li>
+                    
+                
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/schedule/">Schedule</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/software/">Software</a></li>
+                    
+                
+                    
+                        <li><a href="/~psnyder/cs342-summer2017/syllabus/">Syllabus</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+  </body>
+
+</html>
