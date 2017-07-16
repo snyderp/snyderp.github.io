@@ -139,12 +139,12 @@
     - GitFlow and Branching
   slides: /assets/slides/2017-07-14.pdf
 
-- title: Build systems and dependencies
+- title: Inversion of Control and Event Loops
   date: 2017-07-17
   topics:
-    - Deploying and testing
-    - Build systems
-    - Maven and Gradle
+    - Event Loops
+    - Async Servers
+    - UI Patterns
 
 - title: Security
   date: 2017-07-19
