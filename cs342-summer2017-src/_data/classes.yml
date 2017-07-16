@@ -137,6 +137,7 @@
     - Managing History
     - Collaborative Development
     - GitFlow and Branching
+  slides: /assets/slides/2017-07-14.pdf
 
 - title: Build systems and dependencies
   date: 2017-07-17
