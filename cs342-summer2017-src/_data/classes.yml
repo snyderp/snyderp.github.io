@@ -134,12 +134,12 @@
 - title: Version control
   date: 2017-07-14
   topics:
-    - Managing History
-    - Collaborative Development
-    - GitFlow and Branching
+    - Managing history
+    - Collaborative development
+    - GitFlow and branching
   slides: /assets/slides/2017-07-14.pdf
 
-- title: Inversion of Control and Event Loops
+- title: Inversion of control and event loops
   date: 2017-07-17
   topics:
     - Event Loops
@@ -148,31 +148,34 @@
   slides: /assets/slides/2017-07-17.pdf
   files: /assets/code/2017-07-17.zip
 
-- title: Patterns
+- title: Application patterns
   date: 2017-07-19
   topics:
-    - Purpose
-    - Big Four
-    - When to use, and why
+    - Pattern Purpose
+    - Model-View-Controller
+    - Web Apps and Android
+
+- title: Application design
+  date: 2017-07-21
+  topics:
+    - Monolithic
+    - Micro-services
+
+- title: Patterns continued
+  date: 2017-07-24
+  topics:
+    - Purpose of patterns
+    - "Gang of four"
+    - Singleton, Factory, builder
 
 - title: Security
-  date: 2017-07-21
+  date: 2017-07-26
   topics:
     - Encryption in Java
     - Authentication
-    - Costs and benefits compared to Java
     - LibSodium
 
-- title: Networking
-  date: 2017-07-24
-  topics:
-    - Servers and clients
-    - HTTP
-    - Simple Servers
-
-- title: Application design
+- title: Course review
   date: 2017-07-26
   topics:
-    - Monolithic
-    - Microservices
-    - MVC
+    - Preparing for final
