@@ -148,18 +148,19 @@
   slides: /assets/slides/2017-07-17.pdf
   files: /assets/code/2017-07-17.zip
 
-- title: Application patterns
+- title: Event loops in practice
   date: 2017-07-19
+  topics:
+    - Event loop implementation
+    - Effects of blocking
+    - When to use and not to use
+
+- title: Application patterns
+  date: 2017-07-21
   topics:
     - Pattern Purpose
     - Model-View-Controller
     - Web Apps and Android
-
-- title: Application design
-  date: 2017-07-21
-  topics:
-    - Monolithic
-    - Micro-services
 
 - title: Patterns continued
   date: 2017-07-24
@@ -168,14 +169,13 @@
     - "Gang of four"
     - Singleton, Factory, builder
 
-- title: Security
+- title: Application design
   date: 2017-07-26
   topics:
-    - Encryption in Java
-    - Authentication
-    - LibSodium
+    - Monolithic
+    - Micro-services
 
 - title: Course review
-  date: 2017-07-26
+  date: 2017-07-28
   topics:
     - Preparing for final
