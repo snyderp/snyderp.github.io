@@ -154,6 +154,8 @@
     - Event loop implementation
     - Effects of blocking
     - When to use and not to use
+  slides: /assets/slides/2017-07-19.pdf
+  files: /assets/code/2017-07-19.zip
 
 - title: Application patterns
   date: 2017-07-21
