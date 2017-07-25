@@ -165,8 +165,17 @@
   slides: /assets/slides/2017-07-21.pdf
   files: /assets/code/2017-07-21.zip
 
-- title: Patterns continued
-  date: 2017-07-24
+- title: Application patterns continued, build tools
+  date: 2017-07-23
+  topics:
+    - Construction patterns
+    - Build tools and project templates
+    - Contributing to maven projects
+  slides: /assets/slides/2017-07-23.pdf
+  files: /assets/code/2017-07-23.zip
+
+- title: Code Patterns
+  date: 2017-07-25
   topics:
     - Purpose of patterns
     - "Gang of four"
