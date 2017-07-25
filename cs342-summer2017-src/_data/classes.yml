@@ -166,7 +166,7 @@
   files: /assets/code/2017-07-21.zip
 
 - title: Application patterns continued, build tools
-  date: 2017-07-23
+  date: 2017-07-24
   topics:
     - Construction patterns
     - Build tools and project templates
@@ -175,19 +175,14 @@
   files: /assets/code/2017-07-23.zip
 
 - title: Code Patterns
-  date: 2017-07-25
+  date: 2017-07-26
   topics:
     - Purpose of patterns
     - "Gang of four"
     - Singleton, Factory, builder
 
 - title: Application design
-  date: 2017-07-26
+  date: 2017-07-28
   topics:
     - Monolithic
     - Micro-services
-
-- title: Course review
-  date: 2017-07-28
-  topics:
-    - Preparing for final
