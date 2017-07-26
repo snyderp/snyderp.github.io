@@ -171,8 +171,8 @@
     - Construction patterns
     - Build tools and project templates
     - Contributing to maven projects
-  slides: /assets/slides/2017-07-23.pdf
-  files: /assets/code/2017-07-23.zip
+  slides: /assets/slides/2017-07-24.pdf
+  files: /assets/code/2017-07-24.zip
 
 - title: Code Patterns
   date: 2017-07-26
@@ -180,6 +180,8 @@
     - Purpose of patterns
     - "Gang of four"
     - Singleton, Factory, builder
+  slides: /assets/slides/2017-07-26.pdf
+  files: /assets/code/2017-07-26.zip
 
 - title: Application design
   date: 2017-07-28
