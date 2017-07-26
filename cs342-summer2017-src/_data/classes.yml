@@ -156,16 +156,16 @@
   slides: /assets/slides/2017-07-19.pdf
   files: /assets/code/2017-07-19.zip
 
-- title: Application patterns
+- title: Architectural patterns
   date: 2017-07-21
   topics:
-    - Pattern Purpose
+    - Purpose of pattersn
     - Model-View-Controller
     - Web Apps and Android
   slides: /assets/slides/2017-07-21.pdf
   files: /assets/code/2017-07-21.zip
 
-- title: Application patterns continued, build tools
+- title: Implementation strategy patterns and build tools
   date: 2017-07-24
   topics:
     - Construction patterns
@@ -174,7 +174,7 @@
   slides: /assets/slides/2017-07-24.pdf
   files: /assets/code/2017-07-24.zip
 
-- title: Patterns continued, creational patterns
+- title: Creational patterns
   date: 2017-07-26
   topics:
     - Purpose of patterns
