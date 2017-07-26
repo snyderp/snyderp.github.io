@@ -174,7 +174,7 @@
   slides: /assets/slides/2017-07-24.pdf
   files: /assets/code/2017-07-24.zip
 
-- title: Code Patterns
+- title: Patterns continued, creational patterns
   date: 2017-07-26
   topics:
     - Purpose of patterns
