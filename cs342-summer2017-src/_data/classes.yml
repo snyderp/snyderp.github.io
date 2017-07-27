@@ -183,8 +183,8 @@
   slides: /assets/slides/2017-07-26.pdf
   files: /assets/code/2017-07-26.zip
 
-- title: Application design
+- title: Patterns concluded
   date: 2017-07-28
   topics:
-    - Monolithic
-    - Micro-services
+    - Factory pattern
+    - Adapter pattern
