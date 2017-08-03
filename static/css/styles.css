@@ -45,6 +45,7 @@ a:hover {
 }
 
 .page-header img {
+    width: 150px;
     display: inline;
 }
 
