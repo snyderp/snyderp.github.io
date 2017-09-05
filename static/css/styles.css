@@ -38,6 +38,7 @@
 
 a {
   color: #F4524D;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -148,6 +149,6 @@ h2 > a {
 }
 
 h2 > a:hover {
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
 }
