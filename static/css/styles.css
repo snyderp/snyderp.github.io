@@ -36,6 +36,10 @@
   margin-bottom: 2em;
 }
 
+a:not([href]) {
+  text-decoration: none;
+}
+
 a {
   color: #F4524D;
   text-decoration: underline;
