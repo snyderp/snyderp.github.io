@@ -156,3 +156,8 @@ h2 > a:hover {
   text-decoration: underline;
   color: black;
 }
+
+code {
+  color: #468847;
+  background-color: #f0f0f0;
+}
