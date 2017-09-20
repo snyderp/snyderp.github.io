@@ -433,10 +433,10 @@
                                 with <code>null</code>.
                             </p>
                             <p>
-                                This successfully prevented websites from accessing these problematic functions, but would cause issues when later code tries to interact with
+                                This successfully prevented websites from accessing these problematic functions, but would cause issues when code tried to interact with
                                 these now removed methods.  For example, the if the <code>getShaderPrecisionFormat</code> method had been replaced with <code>null</code>,
                                 code expecting to call <code>getShaderPrecisionFormat</code> and do something with the results, such as accessing the <code>rangeMin</code> property
-                                on the returned format object, this code will crash.
+                                on the returned format object, would crash.
                             </p>
                             <p>
                                 My solution, described in our <abbr title="ACM Conference on Computer and Communications Security">CCS</abbr>,
@@ -448,18 +448,18 @@
                             <p>
                                 This specially configured Proxy object traps all ways that objects are interacted with in the Web API, such as being coerced into a string
                                 (<code>String(x)</code>), being indexed into like an array (<code>x[y]</code>), being called as a function (<code>x()</code>), etc.  We
-                                configured our proxy objects to yield themselves on most language operations.  We then replaced the problematic Web API functions with these
+                                configured our proxy objects to return themselves on most language operations.  We then replaced the problematic Web API functions with these
                                 self-yielding proxy objects.
                             </p>
                             <p>
                                 As a result, code like <code>gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).rangeMin</code>
                                 would run in normal browsers as usual (harming users privacy).  Before our patch, the Brave browser would prevent the above code from
                                 executing, protecting users privacy, but at the cost crashing the program, and preventing later, benign parts of the program to continue running.
-                                With our research and code, Brave browsers now have the best of both worlds: websites are prevented from accessing harmful functionality,
-                                but without crashing other, benign parts of the program.
+                                With our research and code, Brave users now have the best of both worlds: websites are prevented from accessing harmful functionality,
+                                but without crashing other, benign parts of the site.
                             </p>
                             <p>
-                                More details about our approach are available in out <a href="https://arxiv.org/pdf/1708.08510.pdf">our paper</a>.
+                                More details about our approach are available in <a href="https://arxiv.org/pdf/1708.08510.pdf">our paper</a>.
                             </p>
                         <li>
                             <span class="item-pair-label"><a href="https://github.com/snyderp/nes-machine-learning">Machine Learning for Automatic 8bit Song Generation</a></span>
