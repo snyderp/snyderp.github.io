@@ -427,39 +427,13 @@
                         </li>
                         <li>
                             <p>
-                                <span class="item-pair-label"><a href="https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7">Improved feature blocking</a> in the <a href="https://www.brave.com/">Brave Browser</a></span>
-                                This patch improves the technique Brave was using to limit access to Web API features commonly used for tracking users online.
-                                Previously, the project would replace tracking-related Web API methods (e.g. <code>gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT)</code>
-                                with <code>null</code>.
+                                <span class="item-pair-label"><a href="https://github.com/brave/browser-laptop/commit/0e40245c3c9da18777db8e11471dec0096181cd7">Improved feature blocking</a>
+                                and <a href="https://github.com/brave/browser-laptop/pull/11140">blocking additional fingerprinting methods</a> in the <a href="https://www.brave.com/">Brave Browser</a></span>.
+                                Both of these changes are based on our work in <a href="https://arxiv.org/pdf/1708.08510.pdf">Most Websites Don’t Need to Vibrate: A Cost–Benefit Approach to Improving Browser Security</a>.
                             </p>
                             <p>
-                                This successfully prevented websites from accessing these problematic functions, but would cause issues when code tried to interact with
-                                these now removed methods.  For example, the if the <code>getShaderPrecisionFormat</code> method had been replaced with <code>null</code>,
-                                code expecting to call <code>getShaderPrecisionFormat</code> and do something with the results, such as accessing the <code>rangeMin</code> property
-                                on the returned format object, would crash.
-                            </p>
-                            <p>
-                                My solution, described in our <abbr title="ACM Conference on Computer and Communications Security">CCS</abbr>,
-                                <span class="year">2017</span> paper,
-                                <a href="https://arxiv.org/pdf/1708.08510.pdf">Most Websites Don’t Need to Vibrate: A Cost–Benefit Approach to Improving Browser Security</a>,
-                                was to be more clever with what we replace these blocked / problematic methods with.  Instead of replacing them with <code>null</code>,
-                                we create a specially configured version of the <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-proxy-objects">ES6 Proxy object</a>.
-                            </p>
-                            <p>
-                                This specially configured Proxy object traps all ways that objects are interacted with in the Web API, such as being coerced into a string
-                                (<code>String(x)</code>), being indexed into like an array (<code>x[y]</code>), being called as a function (<code>x()</code>), etc.  We
-                                configured our proxy objects to return themselves on most language operations.  We then replaced the problematic Web API functions with these
-                                self-yielding proxy objects.
-                            </p>
-                            <p>
-                                As a result, code like <code>gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).rangeMin</code>
-                                would run in normal browsers as usual (harming users privacy).  Before our patch, the Brave browser would prevent the above code from
-                                executing, protecting users privacy, but at the cost crashing the program, and preventing later, benign parts of the program to continue running.
-                                With our research and code, Brave users now have the best of both worlds: websites are prevented from accessing harmful functionality,
-                                but without crashing other, benign parts of the site.
-                            </p>
-                            <p>
-                                More details about our approach are available in <a href="https://arxiv.org/pdf/1708.08510.pdf">our paper</a>.
+                                The first change improves the technique used to block fingerprinting related Web API methods, to reduce the impact on non-fingerprinting related code,  The second change
+                                expands the set of blocked Web API methods to cover five more, previously allowed, methods used for fingerprinting users.
                             </p>
                         </li>
                         <li>
