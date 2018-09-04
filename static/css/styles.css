@@ -88,6 +88,24 @@ a:hover {
   display: inline;
 }
 
+#other-writing-container .authors {
+  display: block;
+}
+
+#other-writing-container .pub-title {
+  display: inline-block;
+}
+
+#other-writing-container .venue {
+  display: inline-block;
+  clear: right;
+}
+
+#other-writing-container .description {
+  display: block;
+  clear: both;
+}
+
 .pub-links a {
   white-space: pre;
 }
