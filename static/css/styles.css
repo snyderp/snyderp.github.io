@@ -184,3 +184,7 @@ code {
 #community-container .position:before {
   content: " – ";
 }
+
+.me {
+  font-weight: bold;
+}
