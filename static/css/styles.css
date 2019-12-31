@@ -123,6 +123,7 @@ a:hover {
 }
 
 .authors li:nth-last-child(2):after {
+  font-weight: normal;
   content: " and ";
 }
 
