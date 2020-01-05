@@ -1,0 +1,3 @@
+(function () {
+    "actual script";
+}());
