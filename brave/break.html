@@ -1,0 +1,10 @@
+<h1>This page should chew CPU</h1>
+<p>Text</p>
+<script>
+  let count = 0;
+  setInterval(_ => {
+    let elm = document.getElementsByTagName("p")[0];
+    elm.id = +count;
+    elm.textContent = count++;
+  }, 100)
+</script>
