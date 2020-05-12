@@ -79,7 +79,7 @@ a:hover {
   display: block;
 }
 
-.authors, .pub-links {
+.authors, .inline {
   padding: 0;
   margin: 0;
 }
@@ -106,19 +106,19 @@ a:hover {
   clear: both;
 }
 
-.pub-links a {
+.inline a {
   white-space: pre;
 }
 
-.authors li, .pub-links li {
+.authors li, .inline li {
   display: inline;
 }
 
-.authors li:after, .pub-links li:after {
+.authors li:after, .inline li:after {
   content: ", ";
 }
 
-.pub-links li:last-child:after {
+.inline li:last-child:after {
   content: "";
 }
 
@@ -132,16 +132,16 @@ a:hover {
 }
 
 .teaching-period:before,
-.pub-links:before {
+.inline:before {
   content: "[ ";
 }
 
 .teaching-period:after,
-.pub-links:after {
+.inline:after {
   content: " ]";
 }
 
-.publications li,
+.list li,
 .teaching li,
 .item-pairs li {
   margin-bottom: 1em;

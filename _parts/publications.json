@@ -1,0 +1,233 @@
+{
+  "venues": {
+    "SIGMETRICS": "ACM Special Interest Group (SIG) for the computer systems performance evaluation community",
+    "WWW": "The Web Conference",
+    "S&P": "IEEE Security and Privacy",
+    "CCS": "ACM Conference on Computer and Communications Security",
+    "IMC": "ACM Internet Measurement Conference",
+    "ConPro": "Workshop on Technology and Consumer Protection",
+    "LASER": "Proceedings of the Workshop on Learning from Authoritative Security Experiment Results",
+    "WEIS": "Workshop on the Economics of Information Security",
+    "CHI": "ACM Conference on Human Factors in Computing Systems",
+    "ACM SIGCAS Computers and Society": "https://dl.acm.org/citation.cfm?id=2656870",
+    "Journal of Cybersecurity": "http://cybersecurity.oxfordjournals.org/",
+    "CCSW": "Cloud Computing Security Workshop at CCS"
+  },
+  "people": {
+    "@pes": "Peter Snyder",
+    "@ben": "Benjamin Livshits",
+    "@panpap": "Panagiotis Papadopoulos",
+    "@chris": "Chris Kanich",
+    "@cyn": "Cynthia Taylor",
+    "@damon": "Damon McCoy"
+  },
+  "publications": [
+    {
+      "title": "Who Filters the Filters: Understanding the Growth, Usefulness and Efficiency of Crowdsourced Ad Blocking",
+      "url": "https://arxiv.org/abs/1810.09160",
+      "authors": [
+        "Me",
+        "Antoine Vastel",
+        "@ben"
+      ],
+      "venue": "SIGMETRICS",
+      "year": 2020
+    },
+    {
+      "title": "Filter List Generation for Underserved Regions",
+      "url": "https://arxiv.org/abs/1910.07303",
+      "authors": [
+        "Alexander Sjosten",
+        "@pes",
+        "Antonio Pastor",
+        "@panpap",
+        "@ben"
+      ],
+      "venue": "WWW",
+      "year": 2020,
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/1910.07303",
+        "dataset": "https://sites.google.com/site/longtailfilterlists/"
+      }
+    },
+    {
+      "title": "Keeping Out the Masses: Understanding the Popularity and Implications of Internet Paywalls",
+      "url": "https://arxiv.org/abs/1903.01406",
+      "authors": [
+        "@panpap",
+        "@pes",
+        "@ben"
+      ],
+      "venue": "WWW",
+      "year": 2020,
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/1903.01406"
+      }
+    },
+    {
+      "title": "AdGraph: A Machine Learning Approach to Automatic and Effective Adblocking",
+      "url": "https://arxiv.org/abs/1805.09155",
+      "authors": [
+        "Umar Iqbal",
+        "@pes",
+        "Shitong Zhu",
+        "@ben",
+        "Zhiyun Qian",
+        "Zubair Shafiq"
+      ],
+      "venue": "S&P",
+      "year": 2020,
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/1805.09155",
+        "blog": "https://www.brave.com/brave-proposes-a-machine-learning-approach-for-ad-blocking/"
+      }
+    },
+    {
+      "title": "SpeedReader: Reader Mode Made Fast and Private",
+      "url": "static/papers/speedreader-www2019.pdf",
+      "authors": [
+        "Mohammad Ghasemisharif",
+        "@pes",
+        "Andrius Aucinas",
+        "@ben"
+      ],
+      "venue": "WWW",
+      "year": 2019,
+      "links": {
+        "arxiv": "https://arxiv.org/abs/1811.03661"
+      }
+    },
+    {
+      "title": "Most Websites Don’t Need to Vibrate: A Cost–Benefit Approach to Improving Browser Security",
+      "url": "static/papers/most-websites-don-t-need-to-vibrate.pdf",
+      "authors": [
+        "@pes",
+        "@cyn",
+        "@chris"
+      ],
+      "venue": "CCS",
+      "year": 2017
+    },
+    {
+      "title": "Fifteen Minutes of Unwanted Fame: Detecting and Characterizing Doxing",
+      "url": "static/papers/fifteen-minutes.pdf",
+      "authors": [
+        "@pes",
+        "Periwinkle Doerfler",
+        "@chris",
+        "@damon"
+      ],
+      "venue": "IMC",
+      "year": 2017,
+      "links": {
+        "code": "static/misc/dox-pipeline.zip",
+        "slides": "static/slides/imc-2017-doxing.pdf"
+      }
+    },
+    {
+      "title": "CDF: Predictably Secure Web Documents",
+      "url": "static/papers/CDF_Predictably_Secure_Web_Documents.pdf",
+      "authors": [
+        "@pes",
+        "Laura Watiker",
+        "@cyn",
+        "@chris"
+      ],
+      "venue": "ConPro",
+      "year": 2017,
+      "links": {
+        "code": "https://github.com/bitslab/cdf",
+        "slides": "static/slides/cdf-conpro2017.pdf"
+      }
+    },
+    {
+      "title": "Browser Feature Usage on the Modern Web",
+      "url": "static/papers/Browser_Feature_Usage_on_the_Modern_Web.pdf",
+      "authors": [
+        "@pes",
+        "Lara Ansari",
+        "@cyn",
+        "@chris"
+      ],
+      "venue": "IMC",
+      "year": 2016,
+      "links": {
+        "dataset": "http://imdc.datcat.org/collection/1-0723-8=Web-API-usage-in-the-Alexa-10k",
+        "slides": "static/slides/imc-2016-web-api-usage.key"
+      }
+    },
+    {
+      "title": "Characterizing Fraud and Its Ramifications in Affiliate Marketing Networks",
+      "url": "http://cybersecurity.oxfordjournals.org/content/cybers/2/1/71.full.pdf",
+      "authors": [
+        "@pes",
+        "@chris"
+      ],
+      "venue": "Journal of Cybersecurity",
+      "year": "2016",
+      "links": {
+        "journal listing": "http://cybersecurity.oxfordjournals.org/content/2/1/71"
+      }
+    },
+    {
+      "title": "The Effect of Repeated Login Prompts on Phishing Susceptibility",
+      "url": "static/papers/The_Effect_of_Repeated_Login_Prompts_on_Phishing_Susceptibility.pdf",
+      "authors": [
+        "@pes",
+        "Michael K. Reiter",
+        "@chris"
+      ],
+      "venue": "LASER",
+      "year": 2016,
+      "links": {
+        "slides": "static/slides/The_Effect_of_Repeated_Login_Prompts_on_Phishing_Susceptibility.key"
+      }
+    },
+    {
+      "title": "No Please, After You: Detecting Fraud in Affiliate Marketing Networks",
+      "url": "static/papers/Snyder_Kanich_-_Cookie_Stuffing.pdf",
+      "authors": [
+        "@pes",
+        "@chris"
+      ],
+      "venue": "WEIS",
+      "year": 2015,
+      "links": {
+        "slides": "static/slides/Peter_Snyder_-_Affilate_Marketing_-_WEIS_2015.pdf",
+        "expanded paper": "static/papers/cookie-stuffing.pdf"
+      }
+    },
+    {
+      "title": "\"I Saw Images I Didn't Even Know I Had\": Understanding User Perceptions of Cloud Storage Privacy",
+      "url": "static/papers/i_saw_images.pdf",
+      "authors": [
+        "Jason Clark",
+        "@pes",
+        "@damon",
+        "@chris"
+      ],
+      "venue": "CHI",
+      "year": 2015
+    },
+    {
+      "title": "Cloudsweeper and Data-Centric Security",
+      "url": "https://dl.acm.org/citation.cfm?id=2656872",
+      "authors": [
+        "@pes",
+        "@chris"
+      ],
+      "venue": "ACM SIGCAS Computers and Society",
+      "year": 2014
+    },
+    {
+      "title": "Cloudsweeper: Enabling Data-Centric Document Management for Secure Cloud Archives",
+      "url": "static/papers/cloudsweeper-ccsw-2013.pdf",
+      "authors": [
+        "@pes",
+        "@chris"
+      ],
+      "venue": "CCSW",
+      "year": 2013
+    }
+  ]
+}
