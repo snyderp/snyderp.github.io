@@ -147,8 +147,8 @@ a:hover {
   margin-bottom: 1em;
 }
 
-.publications li .date:before,
-.publications li .pub-type:before {
+#press-container .publications li .date:before,
+#press-container .publications li .pub-type:before {
   content: ", ";
 }
 
