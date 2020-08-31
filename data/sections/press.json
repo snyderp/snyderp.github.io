@@ -1,0 +1,150 @@
+{
+  "abbrs": {
+    "sources": {
+      "@register": {
+        "title": "The Register",
+        "url": "https://www.theregister.com/"
+      },
+      "@provocateur": {
+        "title": "The Provocateur",
+        "url": "https://provocateurpodcast.com/"
+      },
+      "@sciencedaily": {
+        "title": "ScienceDaily",
+        "url": "https://www.sciencedaily.com/"
+      },
+      "@forbes": {
+        "title": "Forbes",
+        "url": "https://www.forbes.com/"
+      },
+      "@newscientist": {
+        "title": "NewScientist",
+        "url": "https://www.newscientist.com/"
+      },
+      "@softwaresessions": {
+        "title": "Software Sessions",
+        "url": "https://www.softwaresessions.com/"
+      },
+      "@cnet": {
+        "title": "C|Net",
+        "url": "https://www.cnet.com/"
+      },
+      "@techradar": {
+        "title": "TechRadar",
+        "url": "https://www.techradar.com"
+      },
+      "@sciencefriday": {
+        "title": "Science Friday",
+        "url": "https://www.sciencefriday.com/"
+      }
+    }
+  },
+  "items": [
+    {
+      "title": "Brave takes brave stand against Google's plan to turn websites into ad-blocker-thwarting Web Bundles",
+      "url": "https://www.theregister.com/2020/08/27/brave_webbundles_google/",
+      "source": "@register",
+      "date": "2020-08-27T04:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Aggrieved ad tech types decry Google dominance in W3C standards – who writes the rules and for whom?",
+      "url": "https://www.theregister.com/2020/07/17/aggrieved_ad_tech_types_decry/",
+      "source": "@register",
+      "date": "2020-07-17T04:00:00",
+      "type": "news"
+    },
+    {
+      "title": "FYI: Your browser can pick up ultrasonic signals you can't hear, and that sounds like a privacy nightmare to some",
+      "url": "https://www.theregister.com/2020/05/07/web_audio_api_ultrasonic_leaks/",
+      "source": "@register",
+      "date": "2020-05-07T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Chrome deploys deep-linking tech in latest browser build despite privacy concerns",
+      "url": "https://www.theregister.com/2020/02/20/chrome_deploys_deeplinking/",
+      "source": "@register",
+      "date": "2020-02-20T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Google's second stab at preserving both privacy and ad revenue draws fire",
+      "url": "https://www.theregister.com/2020/02/10/googles_second_stab_at_preserving_both_privacy_and_ad_revenue_raises_concerns/",
+      "source": "@register",
+      "date": "2020-02-10T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "If you want an example of how user concerns do not drive software development, check out this Google-backed API",
+      "url": "https://www.theregister.com/2019/12/06/chrome_app_detection_api_privacy/",
+      "source": "@register",
+      "date": "2019-12-06T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Gotta have standards? Security boffins not API about bloated browsers",
+      "url": "https://www.theregister.com/2017/10/24/browsers_api_security_paper/",
+      "source": "@register",
+      "date": "2017-10-24T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "First large-scale doxing study reveals motivations and targets for cyber bullying",
+      "url": "https://www.sciencedaily.com/releases/2017/11/171107122918.htm",
+      "source": "@sciencedaily",
+      "date": "2017-11-07T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Privacy on the Modern Web",
+      "url": "https://provocateurpodcast.com/2017/07/31/chris-kanich-privacy-on-the-modern-web/",
+      "source": "@provocateur",
+      "date": "2017-07-31T00:00:00",
+      "type": "podcast",
+      "note": "This is discussing work I was the lead author on; my advisor is being interviewed."
+    },
+    {
+      "title": "Protecting Your Online Privacy",
+      "url": "https://www.sciencefriday.com/segments/protecting-your-online-privacy/",
+      "source": "@sciencefriday",
+      "date": "0007-12-01T00:00:00",
+      "type": "radio"
+    },
+    {
+      "title": "Google Chrome 80 Released With Controversial Deep Linking Upgrade",
+      "url": "https://www.forbes.com/sites/gordonkelly/2020/02/23/google-chrome-80-upgrade-deep-linking-update-chrome-browser/#7f4cba12219c",
+      "source": "@forbes",
+      "date": "2020-02-23T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Why people ruin others’ lives by exposing all their data online",
+      "url": "https://www.newscientist.com/article/2152950-why-people-ruin-others-lives-by-exposing-all-their-data-online/",
+      "source": "@newscientist",
+      "date": "2017-11-13T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "The battle for your privacy on the web with Pete Snyder",
+      "url": "https://www.softwaresessions.com/episodes/the-battle-for-your-privacy-on-the-web/",
+      "source": "@softwaresessions",
+      "date": "2020-08-12T00:00:00",
+      "type": "podcast"
+    },
+    {
+      "title": "Google's plan for Chrome capability has a big security risk",
+      "url": "https://www.cnet.com/news/google-plan-for-chrome-capability-has-a-big-security-risk/",
+      "source": "@cnet",
+      "date": "2020-07-29T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Google’s new web standard could disable your ad-blocker",
+      "url": "https://www.techradar.com/in/news/googles-new-web-standard-could-disable-your-ad-blocker",
+      "source": "@techradar",
+      "date": "2020-08-27T00:00:00",
+      "type": "news"
+    }
+  ]
+}
