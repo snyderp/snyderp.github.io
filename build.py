@@ -21,7 +21,8 @@ for section_file in SECTIONS_DIR.iterdir():
     section_type = FILE_TYPE_MAPPING[section_file.name]
     section_data = json.load(section_file.open())
     items = section_type.list_from_json(section_data)
-    section_html = section_type.list_to_html(items)
+    items_sorted = section_type.sort(items)
+    section_html = section_type.list_to_html(items_sorted)
     TEMPLATE_INDEX_HTML_TEXT = TEMPLATE_INDEX_HTML_TEXT.replace(
         "{{" + section_file.stem + "}}", section_html)
 

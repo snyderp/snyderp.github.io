@@ -147,6 +147,11 @@ a:hover {
   margin-bottom: 1em;
 }
 
+.publications li .date:before,
+.publications li .pub-type:before {
+  content: ", ";
+}
+
 .pub-type {
   text-transform: capitalize;
 }

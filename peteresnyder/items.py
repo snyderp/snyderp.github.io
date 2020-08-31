@@ -1,6 +1,7 @@
 import datetime
 import html
 import json
+from operator import attrgetter
 import pathlib
 from typing import Any, Dict, Literal, List, Optional
 
@@ -23,6 +24,10 @@ class Item:
 
     def to_html(self) -> str:
         raise NotImplementedError()
+
+    @staticmethod
+    def sort(items: List["Item"]) -> List["Item"]:
+        return sorted(items, key=attrgetter("date"), reverse=True)
 
     @staticmethod
     def list_to_html(items: List["Item"]) -> str:
@@ -75,7 +80,7 @@ class PressItem(Item):
             html.escape(self.type) +
             "</span>"
         )
-        return "\n".join([title_line, venue_line, type_line])
+        return "".join([title_line, venue_line, type_line])
 
     @staticmethod
     def list_to_html(items: List["Item"]) -> str:
@@ -83,8 +88,8 @@ class PressItem(Item):
         for item in items:
             item_html.append("<li>" + item.to_html() + "</li>")
         html = (
-            "<ul class='publications publications-press'>\n" +
-            "\n".join(item_html) +
+            "<ul class='publications publications-press'>" +
+            " ".join(item_html) +
             "</ul>"
         )
         return html
