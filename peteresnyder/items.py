@@ -12,7 +12,7 @@ def authors_html(authors: List[Author]) -> Html:
     inner_items = [f"<li>{a.to_html()}</li>" for a in authors]
     return (
         "<ol class='authors'>" +
-        "\n\t".join(inner_items) +
+        "".join(inner_items) +
         "</ol>"
     )
 
@@ -30,7 +30,7 @@ class Item:
 
     def title_html(self) -> Html:
         return (
-            f"\t<a class='pub-title' href='{self.url}'>" +
+            f"<a class='pub-title' href='{self.url}'>" +
             html.escape(self.title) +
             "</a>"
         )
@@ -58,7 +58,7 @@ class Item:
         class_str = " ".join(cls.html_classes)
         html = (
             f"<ul class='{class_str}'>" +
-            " ".join(item_html) +
+            "".join(item_html) +
             "</ul>"
         )
         return html
@@ -156,12 +156,3 @@ class PressItem(BlogItem):
         source = Source(source_abbr, source_data["title"], source_data["url"])
         return PressItem(basic_item.date, basic_item.title, basic_item.url,
                          source, item_data["type"])
-
-# T = TypeVar('T')
-# def items_from_data(path: pathlib.Path, cls: T) -> List[T]:
-#     items: List[T] = []
-#     full_data = json.load(path.open())
-#     for item_data in full_data["items"]:
-#         item = T.item_from_json(item_data, full_data)
-#         items.append(item)
-#     return items
