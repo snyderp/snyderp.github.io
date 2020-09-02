@@ -19,9 +19,9 @@
                 <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse"
                     aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">&nbsp;</span>
+                    <span class="icon-bar">&nbsp;</span>
+                    <span class="icon-bar">&nbsp;</span>
                 </button>
             </div>
 
@@ -327,107 +327,13 @@
                 </ul>
 
                 <section id="press-container">
-                  <h2><a id="press">Press</a></h2>
+                  <h2><a id="press">Popular Press</a></h2>
                   {{press}}
                 </section>
 
                 <section id="other-writing-container">
                     <h2><a id="blog-writing">Blog Writing</a></h2>
-                    <ul class="publications">
-                        <li>
-                            <a class="pub-title" href="https://brave.com/brave-fingerprinting-and-privacy-budgets/">Brave, Fingerprinting, and Privacy Budgets</a>
-                            <span class="venue">
-                                <span class="year">2019</span>
-                            </span>
-                            <span class="description">
-                                Discussion of why <a href="//github.com/bslassey/privacy-budget">Google's Privacy Budget</a>
-                                proposal for combating browser fingerprinting would not be
-                                effective, and what alternatives Brave is pursuing.
-                            </span>
-                            <ol class="authors">
-                                <li class="me">Peter Snyder</li>
-                                <li>Ben Livshits</li>
-                            </ol>
-                            <ul class="pub-links">
-                                <li><a href="https://brave.com/brave-fingerprinting-and-privacy-budgets/">blog</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="pub-title"
-                                href="https://www.w3.org/blog/2019/06/privacy-anti-patterns-in-standards/">Privacy Anti-Patterns In Standards</a>
-                            <span class="venue">
-                                <span class="year">2019</span>
-                            </span>
-                            <span class="description">
-                                Description of several privacy-harming patterns observed as part of
-                                <a href="https://www.w3.org/Privacy/"><abbr title="Privacy Interest Group">PING</abbr></a>, the W3C's privacy review group,
-                                and how these anti-patterns make it difficult to protect user privacy on the web.
-                            </span>
-                            <ol class="authors">
-                                <li class="me">Peter Snyder</li>
-                            </ol>
-                            <ul class="pub-links">
-                                <li><a href="https://www.w3.org/blog/2019/06/privacy-anti-patterns-in-standards/">blog</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="pub-title" href="https://brave.com/brave-and-client-hints/">Brave's Concerns with the
-                                Client-Hints Proposal</a>
-                            <span class="venue">
-                                <span class="year">2019</span>
-                            </span>
-                            <span class="description">
-                                Discussion of concerns with the proposed <a href="https://tools.ietf.org/html/draft-ietf-httpbis-client-hints-07">Client Hints</a>
-                                standard, and why it would be harmful for web privacy.
-                            </span>
-                            <ol class="authors">
-                                <li class="me">Peter Snyder</li>
-                                <li>Pranjal Jumde</li>
-                                <li>Tom Lowenthal</li>
-                                <li>Brian Clifton</li>
-                            </ol>
-                            <ul class="pub-links">
-                                <li><a href="https://brave.com/brave-and-client-hints/">blog</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="pub-title" href="https://brave.com/redirection-based-tracking/">Understanding Redirection-Based Tracking</a>
-                            <span class="venue">
-                                <span class="year">2018</span>
-                            </span>
-                            <span class="description">
-                                Blog post description research lead at Brave regarding the frequency and parties
-                                involved in bounce-tracking. Conducted as part of designing Brave's improvements to Safari's
-                                <a href="https://webkit.org/blog/8311/intelligent-tracking-prevention-2-0/">Intelligent Tracking Prevention 2.0</a>.
-                            </span>
-                            <ol class="authors">
-                                <li class="me">Peter Snyder</li>
-                                <li>Ben Livshits</li>
-                            </ol>
-                            <ul class="pub-links">
-                                <li><a href="https://brave.com/redirection-based-tracking/">blog</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="pub-title"
-                                href="https://brave.com/the-mounting-cost-of-stale-ad-blocking-rules/">The Mounting Cost of Stale Ad Blocking Rules</a>
-                            <span class="venue">
-                                <span class="year">2018</span>
-                            </span>
-                            <span class="description">
-                                Blog post describing research lead at Brave regarding the number and cost of the
-                                accumulation of stale rules in EasyList.
-                            </span>
-                            <ol class="authors">
-                                <li>Antoine Vastel</li>
-                                <li class="me">Peter Snyder</li>
-                                <li>Ben Livshits</li>
-                            </ol>
-                            <ul class="pub-links">
-                                <li><a href="https://brave.com/the-mounting-cost-of-stale-ad-blocking-rules/">blog</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    {{blog}}
 
                     <h2><a id="other-writing">Other Significant Writing</a></h2>
                     <ul class="publications">
@@ -643,7 +549,7 @@
                 <h2><a id="positions">Other Positions and Accomplishments</a></h2>
                 <ul>
                     <li>I am Brave's <abbr title="advisory committee">AC</abbr> member in the <abbr title="World Wide Web Consortium">W3C</abbr>.</li>
-                    <li>I co-chair <a href="https://www.w3.org/Privacy/"><abbr title="privacy interest group">PING</abbr></a>, the
+                    <li>I co-chair <abbr title="privacy interest group"><a href="https://www.w3.org/Privacy/">PING</a></abbr>, the
                         group responsible for reviewing the privacy aspects of new web standards.</li>
                     <li>Our paper on Web API security and privacy was a finalist in the <a href="https://csaw.engineering.nyu.edu/research">CSAW’17 Applied Research Competition</a>.</li>
                     <li>I was a fellow in UIC's <a href="http://securityigert.uic.edu/">Electronic Security and Privacy IGERT</a>.</li>

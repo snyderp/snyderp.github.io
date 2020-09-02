@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict
 
-from peteresnyder.items import Item, PressItem
+from peteresnyder.items import BlogItem, Item, PressItem
 
 
 DATA_DIR = Path(".", "data")
@@ -12,13 +12,14 @@ SECTIONS_DIR = DATA_DIR / Path("sections")
 TEMPLATE_INDEX_HTML_TEXT = (TEMPLATE_DIR / Path("index.html")).read_text()
 
 FILE_TYPE_MAPPING: Dict[str, Item] = {
-    "press.json": PressItem
+    "press": PressItem,
+    "blog": BlogItem,
 }
 
 for section_file in SECTIONS_DIR.iterdir():
-    if section_file.name not in FILE_TYPE_MAPPING:
+    if section_file.stem not in FILE_TYPE_MAPPING:
         continue
-    section_type = FILE_TYPE_MAPPING[section_file.name]
+    section_type = FILE_TYPE_MAPPING[section_file.stem]
     section_data = json.load(section_file.open())
     items = section_type.list_from_json(section_data)
     items_sorted = section_type.sort(items)

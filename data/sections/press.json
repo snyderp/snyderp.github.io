@@ -31,11 +31,15 @@
       },
       "@techradar": {
         "title": "TechRadar",
-        "url": "https://www.techradar.com"
+        "url": "https://www.techradar.com/"
       },
       "@sciencefriday": {
         "title": "Science Friday",
         "url": "https://www.sciencefriday.com/"
+      },
+      "@diw": {
+        "title": "Digital Information World",
+        "url": "https://www.digitalinformationworld.com/"
       }
     }
   },
@@ -144,6 +148,13 @@
       "url": "https://www.techradar.com/in/news/googles-new-web-standard-could-disable-your-ad-blocker",
       "source": "@techradar",
       "date": "2020-08-27T00:00:00",
+      "type": "news"
+    },
+    {
+      "title": "Google Is Working On A New Web Standard Called WebBundles Which Is Dangerous To The Privacy Of Internet Users, Security Researchers Warned",
+      "url": "https://www.digitalinformationworld.com/2020/09/google-test-webbundles-can-be-dangerous-for-internet-users-privacy-researchers-warned.html",
+      "source": "@diw",
+      "date": "2020-09-01T00:00:00",
       "type": "news"
     }
   ]
