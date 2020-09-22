@@ -40,10 +40,21 @@
       "@diw": {
         "title": "Digital Information World",
         "url": "https://www.digitalinformationworld.com/"
+      },
+      "@markup": {
+        "title": "TheMarkup",
+        "url": "https://themarkup.org/"
       }
     }
   },
   "items": [
+    {
+      "title": "I Scanned the Websites I Visit with Blacklight, and It’s Horrifying. Now What?",
+      "url": "https://themarkup.org/ask-the-markup/2020/09/22/i-scanned-the-websites-i-visit-with-blacklight-and-its-horrifying-now-what",
+      "source": "@markup",
+      "date": "2020-09-22T00:00:00",
+      "type": "news"
+    },
     {
       "title": "Brave Takes Brave Stand Against Google's Plan to Turn Websites into Ad-Blocker-Thwarting Web Bundles",
       "url": "https://www.theregister.com/2020/08/27/brave_webbundles_google/",
