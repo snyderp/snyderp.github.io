@@ -2,7 +2,8 @@
   "abbrs": {
     "authors": {
       "@me": "Peter Snyder",
-      "@ben": "Ben Livshits"
+      "@ben": "Ben Livshits",
+      "@anton": "Anton Lazarev"
     },
     "sources": {
       "@w3c": {
@@ -16,6 +17,17 @@
     }
   },
   "items": [
+    {
+      "title": "Global Privacy Control, a new Privacy Standard Proposal, now Available in Brave’s Desktop and Android Testing Versions",
+      "url": "//brave.com/global-privacy-control/",
+      "date": "2020-10-07T00:00:00",
+      "desc": "Brave authors and implements a new proposal for opting users out of online tracking.",
+      "authors": [
+        "@me",
+        "@anton"
+      ],
+      "source": "@brave"
+    },
     {
       "title": "WebBundles Harmful to Content Blocking, Security Tools, and the Open Web (Standards Updates #2)",
       "url": "//brave.com/webbundles-harmful-to-content-blocking-security-tools-and-the-open-web/",
