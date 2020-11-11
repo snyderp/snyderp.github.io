@@ -1,3 +1,4 @@
+import dataclasses
 import datetime
 import html
 import json
@@ -5,7 +6,7 @@ from operator import attrgetter
 import pathlib
 from typing import Any, Dict, Generic, Literal, List, Optional, TypeVar
 
-from .types import Author, Html, Url, Source
+from .types import Author, Html, Source, Url, Venue
 
 
 def authors_html(authors: List[Author]) -> Html:
@@ -17,16 +18,57 @@ def authors_html(authors: List[Author]) -> Html:
     )
 
 
-class Item:
+class BaseItem:
+    html_classes: List[str] = []
+
+    def to_html(self) -> Html:
+        raise NotImplementedError()
+
+    @staticmethod
+    def sort(items: List["BaseItem"]) -> List["BaseItem"]:
+        return sorted(items, key=attrgetter("date"), reverse=True)
+
+    @classmethod
+    def list_to_html(cls, items: List["BaseItem"]) -> Html:
+        item_html = []
+        for item in items:
+            item_html.append("<li>" + item.to_html() + "</li>")
+
+        class_str = " ".join(cls.html_classes)
+        html = (
+            f"<ul class='{class_str}'>" +
+            "".join(item_html) +
+            "</ul>"
+        )
+        return html
+
+    @classmethod
+    def list_from_json(cls, data: Dict[str, Any]) -> List["BaseItem"]:
+        items: List["BaseItem"] = []
+        for item in data["items"]:
+            items.append(cls.item_from_json(item, data))
+        return items
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "BaseItem":
+        raise NotImplementedError()
+
+
+class ListItem(BaseItem):
     html_classes = ["publications"]
+
     date: datetime.datetime
     title: str
     url: Url
+    source: Source
 
-    def __init__(self, date: datetime.datetime, title: str, url: Url) -> None:
+    def __init__(self, date: datetime.datetime, title: str, url: Url,
+                 source: Source) -> None:
         self.date = date
         self.title = title
         self.url = url
+        self.source = source
 
     def title_html(self) -> Html:
         return (
@@ -42,53 +84,6 @@ class Item:
             "</span>"
         )
 
-    def to_html(self) -> Html:
-        raise NotImplementedError()
-
-    @staticmethod
-    def sort(items: List["Item"]) -> List["Item"]:
-        return sorted(items, key=attrgetter("date"), reverse=True)
-
-    @classmethod
-    def list_to_html(cls, items: List["Item"]) -> Html:
-        item_html = []
-        for item in items:
-            item_html.append("<li>" + item.to_html() + "</li>")
-
-        class_str = " ".join(cls.html_classes)
-        html = (
-            f"<ul class='{class_str}'>" +
-            "".join(item_html) +
-            "</ul>"
-        )
-        return html
-
-    @classmethod
-    def list_from_json(cls, data: Dict[str, Any]) -> List["Item"]:
-        items: List["Item"] = []
-        for item in data["items"]:
-            items.append(cls.item_from_json(item, data))
-        return items
-
-    @staticmethod
-    def item_from_json(item_data: Dict[str, Any],
-                       all_data: Dict[str, Any]) -> "Item":
-        date_str = item_data["date"]
-        date = datetime.datetime.fromisoformat(date_str)
-        return Item(date, item_data["title"], item_data["url"])
-
-
-class BlogItem(Item):
-    authors: List[Author]
-    html_classes = ["publications", "publications-blog"]
-    source: Source
-
-    def __init__(self, date: datetime.datetime, title: str, url: Url,
-                 source: Source, authors: List[Author]) -> None:
-        self.source = source
-        self.authors = authors
-        super().__init__(date, title, url)
-
     def venue_html(self) -> Html:
         return (
             "<span class='venue'>" +
@@ -96,6 +91,25 @@ class BlogItem(Item):
             self.date_html() +
             "</span>"
         )
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "ListItem":
+        date_str = item_data["date"]
+        date = datetime.datetime.fromisoformat(date_str)
+        return ListItem(date, item_data["title"], item_data["url"],
+                        item_data["source"])
+
+
+class BlogItem(ListItem):
+    html_classes = ["publications", "publications-blog"]
+
+    authors: List[Author]
+
+    def __init__(self, date: datetime.datetime, title: str, url: Url,
+                 source: Source, authors: List[Author]) -> None:
+        self.authors = authors
+        super().__init__(date, title, url, source)
 
     def to_html(self) -> Html:
         title_line = self.title_html()
@@ -106,7 +120,7 @@ class BlogItem(Item):
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
                        all_data: Dict[str, Any]) -> "BlogItem":
-        basic_item = Item.item_from_json(item_data, all_data)
+        basic_item = ListItem.item_from_json(item_data, all_data)
 
         authors = []
         for author in item_data["authors"]:
@@ -118,16 +132,49 @@ class BlogItem(Item):
 
         source_abbr = item_data["source"]
         source_data = all_data["abbrs"]["sources"][source_abbr]
-        source = Source(source_abbr, source_data["title"], source_data["url"])
+        source = Source(source_data["title"], source_data["url"], source_abbr)
         return BlogItem(basic_item.date, basic_item.title, basic_item.url,
                         source, authors)
 
 
-class PressItem(BlogItem):
+@dataclasses.dataclass
+class InvolvementItem(BaseItem):
+    venue: Venue
+    position: str
+    date: int
+
+    def to_html(self) -> Html:
+        return (
+            "<tr>"
+            f'<td class="venue">{self.venue.to_html()}</td>'
+            f'<td class="position">{html.escape(self.position)}</td>'
+            f'<td class="year">{self.date}</td>'
+            "</tr>"
+        )
+
+    @classmethod
+    def list_to_html(cls, items: List["BaseItem"]) -> Html:
+        return "\n".join((x.to_html() for x in items))
+
+    @staticmethod
+    def item_from_json(item_data: Dict[str, Any],
+                       all_data: Dict[str, Any]) -> "InvolvementItem":
+        raw_venue = item_data["venue"]
+        if raw_venue[0] == "@":
+            venue = Venue(**all_data["abbrs"]["venues"][raw_venue])
+        else:
+            venue = Venue(raw_venue)
+
+        raw_position = item_data["position"]
+        position = all_data["abbrs"]["positions"][raw_position]
+        date = item_data["year"]
+        return InvolvementItem(venue, position, date)
+
+
+class PressItem(ListItem):
     PRESS_ITEM_TYPES = ["news", "podcast", "radio"]
     html_classes = ["publications", "publications-press"]
 
-    source: Source
     type: str
 
     def __init__(self, date: datetime.datetime, title: str, url: Url,
@@ -135,7 +182,7 @@ class PressItem(BlogItem):
         if item_type not in PressItem.PRESS_ITEM_TYPES:
             raise ValueError(f"{item_type} is not a valid PressItem type")
         self.type = item_type
-        super().__init__(date, title, url, source, [])
+        super().__init__(date, title, url, source)
 
     def to_html(self) -> Html:
         title_line = self.title_html()
@@ -150,9 +197,9 @@ class PressItem(BlogItem):
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
                        all_data: Dict[str, Any]) -> "PressItem":
-        basic_item = Item.item_from_json(item_data, all_data)
+        basic_item = ListItem.item_from_json(item_data, all_data)
         source_abbr = item_data["source"]
         source_data = all_data["abbrs"]["sources"][source_abbr]
-        source = Source(source_abbr, source_data["title"], source_data["url"])
+        source = Source(source_data["title"], source_data["url"], source_abbr)
         return PressItem(basic_item.date, basic_item.title, basic_item.url,
                          source, item_data["type"])

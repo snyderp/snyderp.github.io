@@ -188,10 +188,6 @@ code {
   background-color: #f0f0f0;
 }
 
-#community-container .position:before {
-  content: " – ";
-}
-
 .me {
   font-weight: bold;
 }

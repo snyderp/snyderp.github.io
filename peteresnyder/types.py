@@ -1,4 +1,5 @@
 import collections
+import dataclasses
 import html
 from typing import Optional
 
@@ -6,13 +7,10 @@ Html = str
 Url = str
 
 
+@dataclasses.dataclass
 class Author:
     title: str
-    abbr: Optional[str]
-
-    def __init__(self, title: str, abbr: Optional[str] = None) -> None:
-        self.abbr = abbr
-        self.title = title
+    abbr: Optional[str] = None
 
     def to_html(self) -> Html:
         if self.abbr == "@me":
@@ -20,15 +18,11 @@ class Author:
         return html.escape(self.title)
 
 
+@dataclasses.dataclass
 class Source:
     title: str
     url: Url
     abbr: str
-
-    def __init__(self, abbr: str, title: str, url: Url) -> None:
-        self.abbr = abbr
-        self.title = title
-        self.url = url
 
     def to_html(self) -> Html:
         return (
@@ -36,3 +30,24 @@ class Source:
             html.escape(self.title) +
             "</a>"
         )
+
+
+@dataclasses.dataclass
+class Venue:
+    title: str
+    abbr: Optional[str] = None
+    suffix: Optional[str] = None
+
+    def to_html(self) -> Html:
+        esc_title = html.escape(self.title)
+        html_str = ""
+        if self.abbr:
+            esc_abbr = html.escape(self.abbr)
+            html_str += f'<abbr title="{esc_title}">{esc_abbr}</abbr>'
+        else:
+            html_str += esc_title
+
+        if self.suffix:
+            html_str += " " + html.escape(self.suffix)
+
+        return html_str

@@ -1,0 +1,139 @@
+{
+  "abbrs": {
+    "venues": {
+      "@sigcom-ccr": {
+        "title": "SIGCOMM Computer Communication Review",
+        "abbr": "SIGCOMM CCR"
+      },
+      "@madweb": {
+        "title": "Workshop on Measurements, Attacks, and Defenses for the Web",
+        "abbr": "MADWeb"
+      },
+      "@www": {
+        "title": "The Web Conference",
+        "abbr": "WWW"
+      },
+      "@csaw": {
+        "title": "Cyber Security Awareness Week",
+        "abbr": "CSAW"
+      },
+      "@dtl": {
+        "title": "Data Transparency Lab",
+        "abbr": "DTL",
+        "suffix": "Grants"
+      },
+      "@chi-late": {
+        "title": "Computer Human Interaction",
+        "abbr": "CHI",
+        "suffix": "Late Breaking"
+      },
+      "@usenix": {
+        "title": "USENIX Security"
+      },
+      "@ndss": {
+        "title": "Network and Distributed System Security Symposium",
+        "abbr": "NDSS"
+      },
+      "@sp": {
+        "title": "IEEE Symposium on Security and Privacy",
+        "abbr": "S&P"
+      },
+      "@ccs": {
+        "title": "ACM Conference on Computer and Communications Security",
+        "abbr": "CCS"
+      }
+    },
+    "positions": {
+      "@er": "External Reviewer",
+      "@pc": "PC Member",
+      "@r": "Reviewer"
+    }
+  },
+  "items": [
+    {
+      "venue": "@madweb",
+      "position": "@pc",
+      "year": 2021
+    },
+    {
+      "venue": "@www",
+      "position": "@pc",
+      "year": 2021
+    },
+    {
+      "venue": "@sigcom-ccr",
+      "position": "@er",
+      "year": 2020
+    },
+    {
+      "venue": "@madweb",
+      "position": "@pc",
+      "year": 2020
+    },
+    {
+      "venue": "@www",
+      "position": "@pc",
+      "year": 2020
+    },
+    {
+      "venue": "@csaw",
+      "position": "@pc",
+      "year": 2019
+    },
+    {
+      "venue": "Journal of Cybersecurity",
+      "position": "@er",
+      "year": 2019
+    },
+    {
+      "venue": "@madweb",
+      "position": "@pc",
+      "year": 2019
+    },
+    {
+      "venue": "@dtl",
+      "position": "@r",
+      "year": 2018
+    },
+    {
+      "venue": "@csaw",
+      "position": "@pc",
+      "year": 2018
+    },
+    {
+      "venue": "@chi-late",
+      "position": "@er",
+      "year": 2018
+    },
+    {
+      "venue": "@usenix",
+      "position": "@er",
+      "year": 2017
+    },
+    {
+      "venue": "@ndss",
+      "position": "@er",
+      "year": 2017
+    },
+    {
+      "venue": "@sp",
+      "position": "@er",
+      "year": 2016
+    },
+    {
+      "venue": "@ccs",
+      "position": "@er",
+      "year": 2016
+    },
+    {
+      "venue": "@ccs",
+      "position": "@er",
+      "year": 2015
+    },
+    {
+      "venue": "@ndss",
+      "position": "@er",
+      "year": 2013
+    }
+  ]
+}

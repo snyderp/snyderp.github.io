@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict
 
-from peteresnyder.items import BlogItem, Item, PressItem
+from peteresnyder.items import BlogItem, InvolvementItem, PressItem
 
 
 DATA_DIR = Path(".", "data")
@@ -11,9 +11,10 @@ TEMPLATE_DIR = DATA_DIR / Path("templates")
 SECTIONS_DIR = DATA_DIR / Path("sections")
 TEMPLATE_INDEX_HTML_TEXT = (TEMPLATE_DIR / Path("index.html")).read_text()
 
-FILE_TYPE_MAPPING: Dict[str, Item] = {
+FILE_TYPE_MAPPING: Dict[str, Any] = {
     "press": PressItem,
     "blog": BlogItem,
+    "involvement": InvolvementItem,
 }
 
 for section_file in SECTIONS_DIR.iterdir():
