@@ -1,6 +1,10 @@
 {
   "abbrs": {
     "sources": {
+      "@digitaltrends": {
+        "title": "DigitalTrends",
+        "url": "https://www.digitaltrends.com/"
+      },
       "@register": {
         "title": "The Register",
         "url": "https://www.theregister.com/"
@@ -48,6 +52,13 @@
     }
   },
   "items": [
+    {
+      "title": "The digital switch that blocks all websites from selling your personal data",
+      "url": "https://www.digitaltrends.com/features/global-privacy-control-internet-data-misuse/",
+      "source": "@digitaltrends",
+      "date": "2020-11-23T00:00:00",
+      "type": "news"
+    },
     {
       "title": "I Scanned the Websites I Visit with Blacklight, and It’s Horrifying. Now What?",
       "url": "https://themarkup.org/ask-the-markup/2020/09/22/i-scanned-the-websites-i-visit-with-blacklight-and-its-horrifying-now-what",
