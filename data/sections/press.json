@@ -53,6 +53,13 @@
   },
   "items": [
     {
+      "title": "Google Chrome's crackdown on ad blockers and browser extensions, Manifest v3, is now available in beta",
+      "url": "https://www.theregister.com/2020/12/10/googles_browser_extension_platform_rewrite/",
+      "source": "@register",
+      "date": "2020-12-10T00:00:00",
+      "type": "news"
+    },
+    {
       "title": "The digital switch that blocks all websites from selling your personal data",
       "url": "https://www.digitaltrends.com/features/global-privacy-control-internet-data-misuse/",
       "source": "@digitaltrends",
