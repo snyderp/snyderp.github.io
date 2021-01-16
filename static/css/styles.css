@@ -192,3 +192,9 @@ code {
 .me {
   font-weight: bold;
 }
+
+.publications .venue > a ~ .year::before,
+.publications .venue > span ~ .year::before,
+.publications .venue > abbr ~ .year::before {
+  content: " ";
+}

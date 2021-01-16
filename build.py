@@ -3,7 +3,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict
 
-from peteresnyder.items import BlogItem, InvolvementItem, PressItem
+from peteresnyder.items import BlogItem, InvolvementItem
+from peteresnyder.items import PressItem, PublicationItem
 
 
 DATA_DIR = Path(".", "data")
@@ -15,6 +16,7 @@ FILE_TYPE_MAPPING: Dict[str, Any] = {
     "press": PressItem,
     "blog": BlogItem,
     "involvement": InvolvementItem,
+    "publications": PublicationItem,
 }
 
 for section_file in SECTIONS_DIR.iterdir():

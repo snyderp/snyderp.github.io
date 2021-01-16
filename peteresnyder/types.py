@@ -1,10 +1,13 @@
 import collections
 import dataclasses
+import datetime
 import html
-from typing import Optional
+from typing import Optional, Union
 
 Html = str
 Url = str
+Year = int
+Date = Union[Year, datetime.datetime]
 
 
 @dataclasses.dataclass
@@ -45,9 +48,18 @@ class Venue:
             esc_abbr = html.escape(self.abbr)
             html_str += f'<abbr title="{esc_title}">{esc_abbr}</abbr>'
         else:
-            html_str += esc_title
+            html_str += f'<span>{esc_title}</span>'
 
         if self.suffix:
             html_str += " " + html.escape(self.suffix)
 
         return html_str
+
+
+@dataclasses.dataclass
+class Link:
+    title: str
+    url: Url
+
+    def to_html(self) -> Html:
+        return f"<a href='{self.url}'>{html.escape(self.title)}</a>"
