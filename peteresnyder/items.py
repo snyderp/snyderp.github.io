@@ -12,32 +12,31 @@ from .indent import Indenter
 from .types import Author, Date, Html, Link, Source, Url, Venue, Year
 
 
-def authors_html(authors: List[Author]) -> Html:
-    inner_items = [f"<li>{a.to_html()}</li>" for a in authors]
-    return (
-        "<ol class='authors'>" +
-        "".join(inner_items) +
-        "</ol>"
-    )
+def add_authors_html(authors: List[Author], markup: Indenter) -> None:
+    markup.add("<ol class='authors'>").up()
+    for author in authors:
+        markup.add(f"<li>{author.to_html()}</li>")
+    markup.down().add("</ol>")
 
 
-def links_html(links: List[Link]) -> Html:
+def add_links_html(links: List[Link], markup: Indenter) -> None:
     if len(links) == 0:
-        return ""
+        return
     start_tag = "<span class='label label-default pub-link'>"
     end_tag = "</span>"
-    inner_items = [f"{start_tag}{link.to_html()}{end_tag}" for link in links]
-    return (
-        "<span class='pub-links'>" +
-        "".join(inner_items) +
-        "</span>"
-    )
+
+    markup.add("<span class='pub-links'>").up()
+    for link in links:
+        markup.add(f"{start_tag}{link.to_html()}{end_tag}")
+    markup.down().add("</span>")
 
 
-def destination_url(dest: Union[Source, Venue], list_item: "ListItem") -> Html:
-    dest_html = dest.to_html()
-    date_html = list_item.date_html()
-    return f"<span class='venue'>{dest_html}{date_html}</span>"
+def add_dest_html(dest: Union[Source, Venue], list_item: "ListItem",
+                  markup: Indenter) -> None:
+    markup.add("<span class='venue'>").up()
+    markup.add(dest.to_html())
+    markup.add(list_item.date_html())
+    markup.down().add("</span>")
 
 
 def authors_from_json(item_data: Dict[str, Any],
@@ -154,14 +153,11 @@ class BlogItem(ListItem):
         super().__init__(date, title, url)
 
     def add_html(self, markup: Indenter) -> None:
-        (markup
-            .add("<li>")
-            .up()
-            .add(self.title_html())
-            .add(authors_html(self.authors))
-            .add(destination_url(self.source, self))
-            .down()
-            .add("</li>"))
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_authors_html(self.authors, markup)
+        add_dest_html(self.source, self, markup)
+        markup.down().add("</li>")
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
@@ -188,15 +184,12 @@ class PublicationItem(ListItem):
         super().__init__(year, title, url)
 
     def add_html(self, markup: Indenter) -> None:
-        (markup
-            .add("<li>")
-            .up()
-            .add(self.title_html())
-            .add(authors_html(self.authors))
-            .add(destination_url(self.venue, self))
-            .add(links_html(self.links))
-            .down()
-            .add("</li>"))
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_authors_html(self.authors, markup)
+        add_dest_html(self.venue, self, markup)
+        add_links_html(self.links, markup)
+        markup.down().add("</li>")
 
     def links_to_local_file(self) -> bool:
         if not self.url:
@@ -231,14 +224,11 @@ class InvolvementItem(BaseItem):
     date: Year
 
     def add_html(self, markup: Indenter) -> None:
-        (markup
-            .add("<tr>")
-            .up()
-            .add(f'<td class="venue">{self.venue.to_html()}</td>')
-            .add(f'<td class="position">{html.escape(self.position)}</td>')
-            .add(f'<td class="year">{self.date}</td>')
-            .down()
-            .add("</tr>"))
+        markup.add("<tr>").up()
+        markup.add(f'<td class="venue">{self.venue.to_html()}</td>')
+        markup.add(f'<td class="position">{html.escape(self.position)}</td>')
+        markup.add(f'<td class="year">{self.date}</td>')
+        markup.down().add("</tr>")
 
     @classmethod
     def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
@@ -280,13 +270,11 @@ class PressItem(ListItem):
         return f"<span class='pub-type'>{type_markup}</span>"
 
     def add_html(self, markup: Indenter) -> None:
-        (markup.add("<li>")
-            .up()
-            .add(self.title_html())
-            .add(destination_url(self.source, self))
-            .add(self.type_line())
-            .down()
-            .add("</li>"))
+        markup.add("<li>").up()
+        markup.add(self.title_html())
+        add_dest_html(self.source, self, markup)
+        markup.add(self.type_line())
+        markup.down().add("</li>")
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
