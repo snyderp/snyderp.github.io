@@ -3,7 +3,7 @@ import datetime
 import html
 import json
 from operator import attrgetter
-import pathlib
+from pathlib import Path
 from typing import Any, cast, Dict, Generic, Literal, List
 from typing import Optional, TypeVar, Union
 
@@ -84,6 +84,9 @@ class BaseItem:
 
     def to_html(self) -> Html:
         raise NotImplementedError()
+
+    def validate(self, root_dir: Path) -> bool:
+        return True
 
     @staticmethod
     def sort(items: List["BaseItem"]) -> List["BaseItem"]:
@@ -191,6 +194,20 @@ class PublicationItem(ListItem):
         dest_html = destination_url(self.venue, self)
         links_link = links_html(self.links)
         return "".join([title_line, authors_line, dest_html, links_link])
+
+    def links_to_local_file(self) -> bool:
+        if not self.url:
+            return False
+        if "//" in self.url:  # Looks like a HTTP link
+            return False
+        return True
+
+    def validate(self, root_dir: Path) -> bool:
+        if self.links_to_local_file():
+            possible_pdf_path = root_dir / Path(self.url)
+            if not possible_pdf_path.is_file():
+                raise FileNotFoundError(str(possible_pdf_path))
+        return True
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],

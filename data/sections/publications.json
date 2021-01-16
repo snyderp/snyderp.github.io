@@ -155,7 +155,7 @@
     },
     {
       "title": "SpeedReader: Reader Mode Made Fast and Private",
-      "url": "static/papers/speedreader-www2019.pdf",
+      "url": "static/papers/speedreader-www-2019.pdf",
       "year": 2019,
       "venue": "@www",
       "authors": [
@@ -170,7 +170,7 @@
     },
     {
       "title": "Most Websites Don’t Need to Vibrate: A Cost–Benefit Approach to Improving Browser Security",
-      "url": "static/papers/most-websites-don-t-need-to-vibrate.pdf",
+      "url": "static/papers/vibrate-2017-ccs.pdf",
       "year": 2017,
       "venue": "@ccs",
       "authors": [
@@ -181,7 +181,7 @@
     },
     {
       "title": "Fifteen Minutes of Unwanted Fame: Detecting and Characterizing Doxing",
-      "url": "static/papers/fifteen-minutes.pdf",
+      "url": "static/papers/doxing-imc-2017.pdf",
       "year": 2017,
       "venue": "@imc",
       "authors": [
@@ -197,7 +197,7 @@
     },
     {
       "title": "CDF: Predictably Secure Web Documents",
-      "url": "static/papers/CDF_Predictably_Secure_Web_Documents.pdf",
+      "url": "static/papers/cdf-conpro-2017.pdf",
       "year": 2017,
       "venue": "@conpro",
       "authors": [
@@ -213,7 +213,7 @@
     },
     {
       "title": "Browser Feature Usage on the Modern Web",
-      "url": "static/papers/Browser_Feature_Usage_on_the_Modern_Web.pdf",
+      "url": "static/papers/feature-use-imc-2016.pdf",
       "year": 2016,
       "venue": "@imc",
       "authors": [
@@ -242,7 +242,7 @@
     },
     {
       "title": "The Effect of Repeated Login Prompts on Phishing Susceptibility",
-      "url": "static/papers/The_Effect_of_Repeated_Login_Prompts_on_Phishing_Susceptibility.pdf",
+      "url": "static/papers/phishing-laser-2016.pdf",
       "year": 2016,
       "venue": "@laser",
       "authors": [
@@ -256,7 +256,7 @@
     },
     {
       "title": "No Please, After You: Detecting Fraud in Affiliate Marketing Networks",
-      "url": "static/papers/Snyder_Kanich_-_Cookie_Stuffing.pdf",
+      "url": "static/papers/cookie-stuffing-weis-2015.pdf",
       "year": 2015,
       "venue": "@weis",
       "authors": [
@@ -270,7 +270,7 @@
     },
     {
       "title": "\"I Saw Images I Didn't Even Know I Had\": Understanding User Perceptions of Cloud Storage Privacy",
-      "url": "static/papers/i_saw_images.pdf",
+      "url": "static/papers/images-chi-2015.pdf",
       "year": 2015,
       "venue": "@chi",
       "authors": [

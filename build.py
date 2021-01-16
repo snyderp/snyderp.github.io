@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 import json
 from pathlib import Path
+import sys
 from typing import Any, Dict
 
 from peteresnyder.items import BlogItem, InvolvementItem
 from peteresnyder.items import PressItem, PublicationItem
 
-
+BASE_PATH = Path(sys.argv[0]).parent
 DATA_DIR = Path(".", "data")
 TEMPLATE_DIR = DATA_DIR / Path("templates")
 SECTIONS_DIR = DATA_DIR / Path("sections")
@@ -25,6 +26,8 @@ for section_file in SECTIONS_DIR.iterdir():
     section_type = FILE_TYPE_MAPPING[section_file.stem]
     section_data = json.load(section_file.open())
     items = section_type.list_from_json(section_data)
+    for item in items:
+        item.validate(BASE_PATH)
     items_sorted = section_type.sort(items)
     section_html = section_type.list_to_html(items_sorted)
     TEMPLATE_INDEX_HTML_TEXT = TEMPLATE_INDEX_HTML_TEXT.replace(
