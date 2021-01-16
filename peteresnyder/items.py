@@ -22,11 +22,13 @@ def authors_html(authors: List[Author]) -> Html:
 def links_html(links: List[Link]) -> Html:
     if len(links) == 0:
         return ""
-    inner_items = [f"<li>{link.to_html()}</li>" for link in links]
+    start_tag = "<span class='label label-default pub-link'>"
+    end_tag = "</span>"
+    inner_items = [f"{start_tag}{link.to_html()}{end_tag}" for link in links]
     return (
-        "<ul class='pub-links'>" +
+        "<span class='pub-links'>" +
         "".join(inner_items) +
-        "</ul>"
+        "</span>"
     )
 
 
@@ -203,7 +205,7 @@ class PublicationItem(ListItem):
         return True
 
     def validate(self, root_dir: Path) -> bool:
-        if self.links_to_local_file():
+        if self.url and self.links_to_local_file():
             possible_pdf_path = root_dir / Path(self.url)
             if not possible_pdf_path.is_file():
                 raise FileNotFoundError(str(possible_pdf_path))

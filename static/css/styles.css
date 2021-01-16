@@ -85,7 +85,7 @@ a:hover {
   margin: 0;
 }
 
-.authors {
+.pub-links {
   display: inline;
 }
 
@@ -132,14 +132,17 @@ a:hover {
   content: ". ";
 }
 
-.teaching-period:before,
-.pub-links:before {
-  content: "[ ";
+.pub-link {
+  margin-right: .5em;
 }
 
-.teaching-period:after,
-.pub-links:after {
-  content: " ]";
+.pub-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.pub-link a:hover {
+  text-decoration: underline;
 }
 
 .publications li,
@@ -196,5 +199,9 @@ code {
 .publications .venue > a ~ .year::before,
 .publications .venue > span ~ .year::before,
 .publications .venue > abbr ~ .year::before {
+  content: " ";
+}
+
+#publications-and-journals .venue::after {
   content: " ";
 }
