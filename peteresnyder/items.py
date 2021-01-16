@@ -1,3 +1,4 @@
+import enum
 import dataclasses
 import datetime
 import html
@@ -7,6 +8,7 @@ from pathlib import Path
 from typing import Any, cast, Dict, Generic, Literal, List
 from typing import Optional, TypeVar, Union
 
+from .indent import Indenter
 from .types import Author, Date, Html, Link, Source, Url, Venue, Year
 
 
@@ -33,12 +35,9 @@ def links_html(links: List[Link]) -> Html:
 
 
 def destination_url(dest: Union[Source, Venue], list_item: "ListItem") -> Html:
-    return (
-        "<span class='venue'>" +
-        dest.to_html() +
-        list_item.date_html() +
-        "</span>"
-    )
+    dest_html = dest.to_html()
+    date_html = list_item.date_html()
+    return f"<span class='venue'>{dest_html}{date_html}</span>"
 
 
 def authors_from_json(item_data: Dict[str, Any],
@@ -84,7 +83,7 @@ def links_from_json(item_data: Dict[str, Any]) -> List[Link]:
 class BaseItem:
     html_classes: List[str] = []
 
-    def to_html(self) -> Html:
+    def add_html(self, markup: Indenter) -> None:
         raise NotImplementedError()
 
     def validate(self, root_dir: Path) -> bool:
@@ -95,18 +94,12 @@ class BaseItem:
         return sorted(items, key=attrgetter("date"), reverse=True)
 
     @classmethod
-    def list_to_html(cls, items: List["BaseItem"]) -> Html:
-        item_html = []
-        for item in items:
-            item_html.append("<li>" + item.to_html() + "</li>")
-
+    def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
         class_str = " ".join(cls.html_classes)
-        html = (
-            f"<ul class='{class_str}'>" +
-            "".join(item_html) +
-            "</ul>"
-        )
-        return html
+        markup.add(f"<ul class='{class_str}'>").up()
+        for item in items:
+            item.add_html(markup)
+        markup.down().add("</ul>")
 
     @classmethod
     def list_from_json(cls, data: Dict[str, Any]) -> List["BaseItem"]:
@@ -160,11 +153,15 @@ class BlogItem(ListItem):
         self.source = source
         super().__init__(date, title, url)
 
-    def to_html(self) -> Html:
-        title_line = self.title_html()
-        authors_line = authors_html(self.authors)
-        dest_url = destination_url(self.source, self)
-        return "".join([title_line, authors_line, dest_url])
+    def add_html(self, markup: Indenter) -> None:
+        (markup
+            .add("<li>")
+            .up()
+            .add(self.title_html())
+            .add(authors_html(self.authors))
+            .add(destination_url(self.source, self))
+            .down()
+            .add("</li>"))
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
@@ -190,12 +187,16 @@ class PublicationItem(ListItem):
         self.venue = venue
         super().__init__(year, title, url)
 
-    def to_html(self) -> Html:
-        title_line = self.title_html()
-        authors_line = authors_html(self.authors)
-        dest_html = destination_url(self.venue, self)
-        links_link = links_html(self.links)
-        return "".join([title_line, authors_line, dest_html, links_link])
+    def add_html(self, markup: Indenter) -> None:
+        (markup
+            .add("<li>")
+            .up()
+            .add(self.title_html())
+            .add(authors_html(self.authors))
+            .add(destination_url(self.venue, self))
+            .add(links_html(self.links))
+            .down()
+            .add("</li>"))
 
     def links_to_local_file(self) -> bool:
         if not self.url:
@@ -229,18 +230,20 @@ class InvolvementItem(BaseItem):
     position: str
     date: Year
 
-    def to_html(self) -> Html:
-        return (
-            "<tr>"
-            f'<td class="venue">{self.venue.to_html()}</td>'
-            f'<td class="position">{html.escape(self.position)}</td>'
-            f'<td class="year">{self.date}</td>'
-            "</tr>"
-        )
+    def add_html(self, markup: Indenter) -> None:
+        (markup
+            .add("<tr>")
+            .up()
+            .add(f'<td class="venue">{self.venue.to_html()}</td>')
+            .add(f'<td class="position">{html.escape(self.position)}</td>')
+            .add(f'<td class="year">{self.date}</td>')
+            .down()
+            .add("</tr>"))
 
     @classmethod
-    def list_to_html(cls, items: List["BaseItem"]) -> Html:
-        return "\n".join((x.to_html() for x in items))
+    def add_list_html(cls, items: List["BaseItem"], markup: Indenter) -> None:
+        for item in items:
+            item.add_html(markup)
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
@@ -272,15 +275,18 @@ class PressItem(ListItem):
         self.type = item_type
         super().__init__(date, title, url)
 
-    def to_html(self) -> Html:
-        title_line = self.title_html()
-        venue_line = destination_url(self.source, self)
-        type_line = (
-            "<span class='pub-type'>" +
-            html.escape(self.type) +
-            "</span>"
-        )
-        return "".join([title_line, venue_line, type_line])
+    def type_line(self) -> Html:
+        type_markup = html.escape(self.type)
+        return f"<span class='pub-type'>{type_markup}</span>"
+
+    def add_html(self, markup: Indenter) -> None:
+        (markup.add("<li>")
+            .up()
+            .add(self.title_html())
+            .add(destination_url(self.source, self))
+            .add(self.type_line())
+            .down()
+            .add("</li>"))
 
     @staticmethod
     def item_from_json(item_data: Dict[str, Any],
