@@ -180,7 +180,11 @@
         "@me",
         "@cyn",
         "@chris"
-      ]
+      ],
+      "links": {
+        "code": "//github.com/pes10k/firefox-api-blocking-extension",
+        "slides": "static/papers/vibrate-ccs-2017.pdf"
+      }
     },
     {
       "title": "Fifteen Minutes of Unwanted Fame: Detecting and Characterizing Doxing",
