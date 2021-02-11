@@ -201,7 +201,3 @@ code {
 .publications .venue > abbr ~ .year::before {
   content: " ";
 }
-
-#publications-and-journals .venue::after {
-  content: " ";
-}

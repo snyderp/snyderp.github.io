@@ -1,0 +1,77 @@
+{
+  "abbrs": {
+    "venues": {
+      "@madweb": {
+        "title": "Workshop on Measurements, Attacks, and Defenses for the Web",
+        "abbr": "MADWeb"
+      },
+      "@pearg": {
+        "title": "Privacy Enhancements and Assessments Proposed Research Group at IETF",
+        "abbr": "PEARG"
+      },
+      "@www": {
+        "title": "The Web Conference",
+        "abbr": "WWW"
+      }
+    }
+  },
+  "items": [
+    {
+      "title": "Best-of-Breed Content Blocking in Brave: Three Projects to Improve the Depth, Breath, and Usefulness of Blocking at Scale",
+      "url": "//madweb.work/program20/",
+      "type": "invited talk",
+      "year": 2020,
+      "venue": "@venue",
+      "links": {
+        "slides": "static/slides/madweb-2020-best-of-breed-blocking.pdf",
+      }
+    },
+    {
+      "title": "Brave, Fingerprinting, and Privacy on the Web",
+      "url": "//web.stanford.edu/class/cs253/",
+      "type": "invited talk",
+      "year": 2019,
+      "venue": "CS253 - Web Security @ Stanford",
+      "links": {
+        "slides": "static/slides/brave-fingerprinting-privacy-on-web.pdf",
+        "video": "//www.youtube.com/watch?v=OVh0oHbmla0"
+      }
+    },
+    {
+      "title": "Privacy, Standards and Anti-Patterns",
+      "url": "//datatracker.ietf.org/meeting/105/materials/agenda-105-pearg-01",
+      "type": "invited talk",
+      "year": 2019,
+      "venue": "@pearg",
+      "links": {
+        "slides": "static/slides/ietf-2019-privacy-standards-and-anti-patterns.pdf"
+      }
+    },
+    {
+      "title": "Brave, Privacy and Standards",
+      "url": "//www.w3.org/2019/05/15-w3c-track/speakers.html#pete",
+      "type": "invited talk",
+      "year": 2019,
+      "venue": "@www",
+      "links": {
+        "slides": "static/slides/www-w3c-2019-brave-privacy-standards.pdf"
+      }
+    },
+    {
+      "title": "Web Privacy Beyond Extensions: New Browsers Are Pursuing Deep Privacy Protections",
+      "url": "//www.usenix.org/conference/enigma2019/presentation/snyder",
+      "type": "conference talk",
+      "year": 2019,
+      "venue": "USENIX Enigma",
+      "links": {
+        "slides": "static/slides/usenix-enigma-2019-extensions.pdf"
+      }
+    },
+    {
+      "title": "Browser Feature Usage on the Modern Web",
+      "url": "https://acm.cs.uic.edu/sigsecurity",
+      "type": "invited talk",
+      "year": 2017
+    }
+  ]
+}

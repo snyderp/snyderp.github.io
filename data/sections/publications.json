@@ -56,6 +56,7 @@
   "items": [
     {
       "title": "Towards Realistic and Reproducible Web Crawl Measurements",
+      "url": "static/papers/realistic-www-2021.pdf",
       "year": 2021,
       "venue": "@www",
       "authors": [
@@ -69,7 +70,9 @@
         "@alex"
       ],
       "links": {
-        "arxiv": "//arxiv.org/abs/1905.08767"
+        "arxiv": "//arxiv.org/abs/1905.08767",
+        "code": "//github.com/wspr-ncsu/reprocrawl-code-release",
+        "dataset": "//drive.google.com/file/d/1x-6_ATLtUTgBGmF8Yuz_ne-e_G20ve46/view"
       }
     },
     {
@@ -170,7 +173,7 @@
     },
     {
       "title": "Most Websites Don’t Need to Vibrate: A Cost–Benefit Approach to Improving Browser Security",
-      "url": "static/papers/vibrate-2017-ccs.pdf",
+      "url": "static/papers/vibrate-ccs-2017.pdf",
       "year": 2017,
       "venue": "@ccs",
       "authors": [
