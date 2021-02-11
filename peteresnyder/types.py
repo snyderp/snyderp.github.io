@@ -2,7 +2,8 @@ import collections
 import dataclasses
 import datetime
 import html
-from typing import Optional, Union
+import os
+from typing import Callable, cast, Dict, NamedTuple, Optional, Union
 
 Html = str
 Url = str
@@ -56,10 +57,29 @@ class Venue:
         return html_str
 
 
+class LinkValidator(NamedTuple):
+    check: Callable[[str], bool]
+    name: str
+
+
+LINK_VALIDATORS: Dict[str, LinkValidator] = {
+    "@slides": LinkValidator(os.path.isfile, "slides"),
+    "@slides-keynote": LinkValidator(os.path.isfile, "slides (keynote)")
+}
+
+
 @dataclasses.dataclass
 class Link:
     title: str
     url: Url
+
+    def __post_init__(self) -> None:
+        if self.title[0] != "@":
+            return
+        validator = LINK_VALIDATORS[self.title]
+        if not validator.check(self.url):
+            raise ValueError(f"{self.url} is not a valid {self.title}")
+        self.title = validator.name
 
     def to_html(self) -> Html:
         return f"<a href='{self.url}'>{html.escape(self.title)}</a>"

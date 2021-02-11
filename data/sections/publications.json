@@ -89,7 +89,7 @@
       "links": {
         "arxiv": "//arxiv.org/abs/2005.11910",
         "dataset": "//github.com/semantic-signatures/semantic-signatures",
-        "slides": "static/slides/sigmetrics-2020-filters-slides.pdf"
+        "@slides": "static/slides/sigmetrics-2020-filters-slides.pdf"
       }
     },
     {
@@ -104,7 +104,7 @@
       ],
       "links": {
         "arxiv": "//arxiv.org/abs/1810.09160",
-        "slides": "static/slides/easylist-sigmetrics-2020.pdf"
+        "@slides": "static/slides/easylist-sigmetrics-2020.pdf"
       }
     },
     {
@@ -184,7 +184,7 @@
       ],
       "links": {
         "code": "//github.com/pes10k/firefox-api-blocking-extension",
-        "slides": "static/papers/vibrate-ccs-2017.pdf"
+        "@slides": "static/papers/vibrate-ccs-2017.pdf"
       }
     },
     {
@@ -200,7 +200,7 @@
       ],
       "links": {
         "code": "static/misc/dox-pipeline.zip",
-        "slides": "static/slides/doxing-imc-2017.pdf"
+        "@slides": "static/slides/doxing-imc-2017.pdf"
       }
     },
     {
@@ -216,7 +216,7 @@
       ],
       "links": {
         "code": "//github.com/bitslab/cdf",
-        "slides": "static/slides/cdf-conpro-2017.pdf"
+        "@slides": "static/slides/cdf-conpro-2017.pdf"
       }
     },
     {
@@ -232,8 +232,8 @@
       ],
       "links": {
         "dataset": "http://imdc.datcat.org/collection/1-0723-8=Web-API-usage-in-the-Alexa-10k",
-        "slides": "static/slides/feature-use-imc-2016.pdf",
-        "slides (keynote)": "static/slides/feature-use-imc-2016.key"
+        "@slides": "static/slides/feature-use-imc-2016.pdf",
+        "@slides-keynote": "static/slides/feature-use-imc-2016.key"
       }
     },
     {
@@ -260,8 +260,8 @@
         "@chris"
       ],
       "links": {
-        "slides": "static/slides/phishing-laser-2016.pdf",
-        "slides (keynote)": "static/slides/phishing-laser-2016.key"
+        "@slides": "static/slides/phishing-laser-2016.pdf",
+        "@slides-keynote": "static/slides/phishing-laser-2016.key"
       }
     },
     {
